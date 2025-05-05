@@ -5,7 +5,7 @@
 	(uuid "3e14f85b-1fd4-4034-9146-b5c17fdb3f6d")
 	(paper "A4")
 	(lib_symbols
-		(symbol "Connector:Conn_01x02_Pin"
+		(symbol "Connector:Conn_01x03_Pin"
 			(pin_names
 				(offset 1.016)
 				(hide yes)
@@ -14,14 +14,14 @@
 			(in_bom yes)
 			(on_board yes)
 			(property "Reference" "J"
-				(at 0 2.54 0)
+				(at 0 5.08 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
 			)
-			(property "Value" "Conn_01x02_Pin"
+			(property "Value" "Conn_01x03_Pin"
 				(at 0 -5.08 0)
 				(effects
 					(font
@@ -47,7 +47,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "Generic connector, single row, 01x02, script generated"
+			(property "Description" "Generic connector, single row, 01x03, script generated"
 				(at 0 0 0)
 				(effects
 					(font
@@ -82,7 +82,18 @@
 					(hide yes)
 				)
 			)
-			(symbol "Conn_01x02_Pin_1_1"
+			(symbol "Conn_01x03_Pin_1_1"
+				(rectangle
+					(start 0.8636 2.667)
+					(end 0 2.413)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
 				(rectangle
 					(start 0.8636 0.127)
 					(end 0 -0.127)
@@ -103,6 +114,18 @@
 					)
 					(fill
 						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 2.54) (xy 0.8636 2.54)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
 					)
 				)
 				(polyline
@@ -130,7 +153,7 @@
 					)
 				)
 				(pin passive line
-					(at 5.08 0 180)
+					(at 5.08 2.54 180)
 					(length 3.81)
 					(name "Pin_1"
 						(effects
@@ -148,7 +171,7 @@
 					)
 				)
 				(pin passive line
-					(at 5.08 -2.54 180)
+					(at 5.08 0 180)
 					(length 3.81)
 					(name "Pin_2"
 						(effects
@@ -158,6 +181,24 @@
 						)
 					)
 					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 -2.54 180)
+					(length 3.81)
+					(name "Pin_3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -3426,7 +3467,7 @@
 		(uuid "28e594ee-417b-4503-a857-d086f7c0482c")
 	)
 	(label "M2"
-		(at 29.21 138.43 0)
+		(at 48.26 125.73 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3456,7 +3497,7 @@
 		(uuid "46b0bda6-8fc8-4511-8fdf-15947d55ce05")
 	)
 	(label "M1"
-		(at 29.21 128.27 0)
+		(at 48.26 123.19 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3861,73 +3902,6 @@
 			(project "handy"
 				(path "/3e14f85b-1fd4-4034-9146-b5c17fdb3f6d"
 					(reference "#PWR08")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 29.21 135.89 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "11565aee-e438-4024-b7a2-0fffc35167ba")
-		(property "Reference" "#PWR019"
-			(at 35.56 135.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 33.02 135.8899 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" ""
-			(at 29.21 135.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 29.21 135.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 29.21 135.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "147af0dd-8b6a-489b-b954-4ac744161a71")
-		)
-		(instances
-			(project "handy"
-				(path "/3e14f85b-1fd4-4034-9146-b5c17fdb3f6d"
-					(reference "#PWR019")
 					(unit 1)
 				)
 			)
@@ -4551,6 +4525,77 @@
 			(project ""
 				(path "/3e14f85b-1fd4-4034-9146-b5c17fdb3f6d"
 					(reference "C1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Conn_01x03_Pin")
+		(at 43.18 123.19 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5229fbf9-0ff3-465e-8c3b-6880ffd3e0cb")
+		(property "Reference" "J3"
+			(at 43.815 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Conn_01x03_Pin"
+			(at 43.815 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Connector_PinSocket_2.00mm:PinSocket_1x03_P2.00mm_Vertical"
+			(at 43.18 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 43.18 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x03, script generated"
+			(at 43.18 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "4bb4ef1b-16da-4ec7-8ba4-eb1a24df3ad0")
+		)
+		(pin "3"
+			(uuid "2c6d89e2-6fe8-49f2-97d0-7fdb9d7455a0")
+		)
+		(pin "1"
+			(uuid "064a2fb3-8ce7-4dd9-92d0-a82e3eda8511")
+		)
+		(instances
+			(project ""
+				(path "/3e14f85b-1fd4-4034-9146-b5c17fdb3f6d"
+					(reference "J3")
 					(unit 1)
 				)
 			)
@@ -5668,7 +5713,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 29.21 125.73 90)
+		(at 48.26 120.65 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5677,7 +5722,7 @@
 		(fields_autoplaced yes)
 		(uuid "ada1b80c-00af-46bf-b13d-98461d789267")
 		(property "Reference" "#PWR018"
-			(at 35.56 125.73 0)
+			(at 54.61 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5686,7 +5731,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 33.02 125.7299 90)
+			(at 52.07 120.6499 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5695,7 +5740,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 29.21 125.73 0)
+			(at 48.26 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5704,7 +5749,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 29.21 125.73 0)
+			(at 48.26 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5713,7 +5758,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 29.21 125.73 0)
+			(at 48.26 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6552,74 +6597,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:Conn_01x02_Pin")
-		(at 24.13 135.89 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "eb28eb6d-d9bc-4944-9b5f-bb78b4db2dae")
-		(property "Reference" "M2"
-			(at 24.765 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "Motor 2"
-			(at 24.765 133.35 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Connector_PinHeader_2.00mm:PinHeader_1x02_P2.00mm_Vertical"
-			(at 24.13 135.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 24.13 135.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Generic connector, single row, 01x02, script generated"
-			(at 24.13 135.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "2e359420-d469-4956-a53e-1fb628cd6426")
-		)
-		(pin "1"
-			(uuid "5992a70a-dddd-4772-8533-a9a99f4458da")
-		)
-		(instances
-			(project "handy"
-				(path "/3e14f85b-1fd4-4034-9146-b5c17fdb3f6d"
-					(reference "M2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:R")
 		(at 167.64 76.2 0)
 		(unit 1)
@@ -6684,74 +6661,6 @@
 			(project "handy"
 				(path "/3e14f85b-1fd4-4034-9146-b5c17fdb3f6d"
 					(reference "R3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:Conn_01x02_Pin")
-		(at 24.13 125.73 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "ef21221f-6804-4d36-b876-a2df48993730")
-		(property "Reference" "M1"
-			(at 24.765 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "Motor 1"
-			(at 24.765 123.19 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Connector_PinHeader_2.00mm:PinHeader_1x02_P2.00mm_Vertical"
-			(at 24.13 125.73 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 24.13 125.73 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Generic connector, single row, 01x02, script generated"
-			(at 24.13 125.73 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "e46c29b6-c00a-48eb-b04e-25b0663e4f28")
-		)
-		(pin "1"
-			(uuid "7eaf490c-c25a-4e63-a571-8f3ab11c88fb")
-		)
-		(instances
-			(project ""
-				(path "/3e14f85b-1fd4-4034-9146-b5c17fdb3f6d"
-					(reference "M1")
 					(unit 1)
 				)
 			)
