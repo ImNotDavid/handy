@@ -2774,6 +2774,10 @@
 		(uuid "140b80ed-1092-4397-b7b9-b5d46a52b0b1")
 	)
 	(no_connect
+		(at 213.36 161.29)
+		(uuid "1c559115-642b-44c6-b341-a8b1fd14033d")
+	)
+	(no_connect
 		(at 134.62 137.16)
 		(uuid "1d1ce7f8-1572-4e40-878f-478a6ac22c3e")
 	)
@@ -3686,7 +3690,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0201_0603Metric_Pad0.64x0.40mm_HandSolder"
+		(property "Footprint" "Jumper:SolderJumper-2_P1.3mm_Open_TrianglePad1.0x1.5mm"
 			(at 30.48 74.93 0)
 			(effects
 				(font
@@ -3935,7 +3939,7 @@
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
+		(on_board no)
 		(dnp no)
 		(uuid "1bcd0e27-e648-44f1-9bad-02916ff5a944")
 		(property "Reference" "#PWR020"
@@ -4001,7 +4005,7 @@
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
+		(on_board no)
 		(dnp no)
 		(uuid "24d7ba43-48d9-47e0-a811-b50aa00b5a2c")
 		(property "Reference" "#PWR021"
@@ -4240,7 +4244,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0201_0603Metric_Pad0.64x0.40mm_HandSolder"
+		(property "Footprint" "Jumper:SolderJumper-2_P1.3mm_Open_TrianglePad1.0x1.5mm"
 			(at 30.48 64.77 0)
 			(effects
 				(font
@@ -4440,7 +4444,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 47.752 90.17 90)
 			(effects
 				(font
@@ -4510,7 +4514,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 103.8352 62.23 0)
 			(effects
 				(font
@@ -4558,7 +4562,7 @@
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
+		(on_board no)
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "52bc252d-d8db-46fe-9efb-97e1a6337ebe")
@@ -4686,7 +4690,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 52.832 85.09 90)
 			(effects
 				(font
@@ -4879,7 +4883,7 @@
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
+		(on_board no)
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5c393bb1-3e8d-44ce-b547-384d6d9cfa2f")
@@ -5056,7 +5060,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 174.752 36.83 90)
 			(effects
 				(font
@@ -5370,7 +5374,7 @@
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
+		(on_board no)
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "93ca1a14-3cee-4326-91cf-f4e5c7c3cc43")
@@ -5456,7 +5460,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0201_0603Metric_Pad0.64x0.40mm_HandSolder"
+		(property "Footprint" "Jumper:SolderJumper-2_P1.3mm_Open_TrianglePad1.0x1.5mm"
 			(at 30.48 69.85 0)
 			(effects
 				(font
@@ -6029,7 +6033,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 165.862 36.83 90)
 			(effects
 				(font
@@ -6165,7 +6169,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 103.8352 101.6 0)
 			(effects
 				(font
@@ -6235,7 +6239,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 174.752 76.2 90)
 			(effects
 				(font
@@ -6305,7 +6309,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 42.672 96.52 90)
 			(effects
 				(font
@@ -6643,7 +6647,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 165.862 76.2 90)
 			(effects
 				(font
