@@ -1,4 +1,6 @@
 (sym_lib_table
   (version 7)
   (lib (name "as5600")(type "KiCad")(uri "${KIPRJMOD}/footprints/AS5600/as5600.kicad_sym")(options "")(descr ""))
+  (lib (name "drv8830")(type "KiCad")(uri "${KIPRJMOD}/footprints/DRV8830/2025-05-04_18-55-30.kicad_sym")(options "")(descr ""))
+  (lib (name "icm42670")(type "KiCad")(uri "${KIPRJMOD}/footprints/ICM42670/2025-05-05_00-50-49.kicad_sym")(options "")(descr ""))
 )
