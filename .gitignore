@@ -4,7 +4,7 @@ software/urdf/assets
 .pio
 /venv
 .vscode
-/urdf/config.json
+urdf/assets
 # Temporary files
 *.000
 *.bak
