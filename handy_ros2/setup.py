@@ -14,13 +14,13 @@ setup(
     install_requires=['setuptools'],
     zip_safe=True,
     maintainer='winton',
-    maintainer_email='winton@todo.todo',
-    description='TODO: Package description',
-    license='TODO: License declaration',
+    maintainer_email='dc1021@ic.ac.uk',
+    description='Publish joints from ESP32',
+    license='Apache License 2.0',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'handy_bridge = handy_ros2.handy_bridge:main'
+            'talker = handy_ros2.publisher_member_function:main',
         ],
     },
 )
