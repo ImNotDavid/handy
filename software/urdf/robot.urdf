@@ -1,0 +1,1389 @@
+<?xml version="1.0" ?>
+<!-- Generated using onshape-to-robot -->
+<!-- Onshape https://cad.onshape.com/documents/0a742349b272426ed28af825/w/54958a345ddf4acc6952a0a3/e/5a739a4c67b637dbfb05b956 -->
+<robot name="C:\Users\david\Documents\Code\handy\software\urdf">
+  <!-- Link base_link -->
+  <link name="base_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-09"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+  </link>
+  <!-- Link base -->
+  <link name="base">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-09"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+    <!-- Part part_1 -->
+    <visual>
+      <origin xyz="0.0310273 0.0432111 0.006" rpy="0 -0 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets\part_1.stl"/>
+      </geometry>
+      <material name="part_1_material">
+        <color rgba="0.231373 0.380392 0.705882 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0310273 0.0432111 0.006" rpy="0 -0 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets\part_1.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part base -->
+    <visual>
+      <origin xyz="-0.00147273 -0.00178892 0.005" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets\base.stl"/>
+      </geometry>
+      <material name="base_material">
+        <color rgba="0.647059 0.647059 0.647059 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.00147273 -0.00178892 0.005" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets\base.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part part_1_2 -->
+    <visual>
+      <origin xyz="0.0285273 -0.0267889 0.003" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets\part_1__2.stl"/>
+      </geometry>
+      <material name="part_1_2_material">
+        <color rgba="0.231373 0.380392 0.705882 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0285273 -0.0267889 0.003" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets\part_1__2.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link encoder_link_assembly -->
+  <link name="encoder_link_assembly">
+    <inertial>
+      <origin xyz="-0.0339637 -2.62226e-18 0.000778722" rpy="0 0 0"/>
+      <mass value="0.000597845"/>
+      <inertia ixx="7.54499e-09" ixy="-3.97468e-23" ixz="-4.80745e-09" iyy="3.46785e-07" iyz="-3.30235e-24" izz="3.41347e-07"/>
+    </inertial>
+    <!-- Part socket_button_head_screw_m2x0_4_x_6__26a03d688f50a4abcad31a07665ed233 -->
+    <visual>
+      <origin xyz="-0.03 0 0.00806" rpy="-1.19716e-64 -1.26989e-64 1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\socket_button_head_screw_m2x0_4_x_6__26a03d688f50a4abcad31a07665ed233.stl"/>
+      </geometry>
+      <material name="socket_button_head_screw_m2x0_4_x_6__26a03d688f50a4abcad31a07665ed233_material">
+        <color rgba="0.603922 0.647059 0.686275 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.03 0 0.00806" rpy="-1.19716e-64 -1.26989e-64 1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\socket_button_head_screw_m2x0_4_x_6__26a03d688f50a4abcad31a07665ed233.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part m2x2_5_insert -->
+    <visual>
+      <origin xyz="-0.03 6.93889e-18 0.0027" rpy="-1.19716e-64 -1.26989e-64 1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\m2x2_5_insert.stl"/>
+      </geometry>
+      <material name="m2x2_5_insert_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.03 6.93889e-18 0.0027" rpy="-1.19716e-64 -1.26989e-64 1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\m2x2_5_insert.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part encoder_link -->
+    <visual>
+      <origin xyz="-0.03 6.93889e-18 -0.0018" rpy="3.14159 -1.26989e-64 1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\encoder_link.stl"/>
+      </geometry>
+      <material name="encoder_link_material">
+        <color rgba="0.231373 0.380392 0.705882 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.03 6.93889e-18 -0.0018" rpy="3.14159 -1.26989e-64 1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\encoder_link.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part 57155k526_stainless_steel_ball_bearing -->
+    <visual>
+      <origin xyz="-0.06 -6.93889e-18 -0.00125" rpy="-1.44353e-16 -1.26989e-64 1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\57155k526_stainless_steel_ball_bearing.stl"/>
+      </geometry>
+      <material name="57155k526_stainless_steel_ball_bearing_material">
+        <color rgba="0.901961 0.901961 0.901961 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.06 -6.93889e-18 -0.00125" rpy="-1.44353e-16 -1.26989e-64 1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\57155k526_stainless_steel_ball_bearing.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part 57155k526_stainless_steel_ball_bearing_2 -->
+    <visual>
+      <origin xyz="-0.06 -6.93889e-18 -0.00125" rpy="-1.44353e-16 -1.26989e-64 1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\57155k526_stainless_steel_ball_bearing__2.stl"/>
+      </geometry>
+      <material name="57155k526_stainless_steel_ball_bearing_2_material">
+        <color rgba="0.901961 0.901961 0.901961 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.06 -6.93889e-18 -0.00125" rpy="-1.44353e-16 -1.26989e-64 1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\57155k526_stainless_steel_ball_bearing__2.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part 57155k526_stainless_steel_ball_bearing_3 -->
+    <visual>
+      <origin xyz="-0.06 -6.93889e-18 -0.00125" rpy="-1.44353e-16 -1.26989e-64 1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\57155k526_stainless_steel_ball_bearing__3.stl"/>
+      </geometry>
+      <material name="57155k526_stainless_steel_ball_bearing_3_material">
+        <color rgba="0.901961 0.901961 0.901961 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.06 -6.93889e-18 -0.00125" rpy="-1.44353e-16 -1.26989e-64 1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\57155k526_stainless_steel_ball_bearing__3.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part 57155k526_stainless_steel_ball_bearing_4 -->
+    <visual>
+      <origin xyz="-0.06 -6.93889e-18 -0.00125" rpy="-1.44353e-16 -1.26989e-64 1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\57155k526_stainless_steel_ball_bearing__4.stl"/>
+      </geometry>
+      <material name="57155k526_stainless_steel_ball_bearing_4_material">
+        <color rgba="0.901961 0.901961 0.901961 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.06 -6.93889e-18 -0.00125" rpy="-1.44353e-16 -1.26989e-64 1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\57155k526_stainless_steel_ball_bearing__4.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part 57155k526_stainless_steel_ball_bearing_5 -->
+    <visual>
+      <origin xyz="-0.06 -6.93889e-18 -0.00125" rpy="-1.44353e-16 -1.26989e-64 1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\57155k526_stainless_steel_ball_bearing__5.stl"/>
+      </geometry>
+      <material name="57155k526_stainless_steel_ball_bearing_5_material">
+        <color rgba="0.901961 0.901961 0.901961 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.06 -6.93889e-18 -0.00125" rpy="-1.44353e-16 -1.26989e-64 1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\57155k526_stainless_steel_ball_bearing__5.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part 57155k526_stainless_steel_ball_bearing_6 -->
+    <visual>
+      <origin xyz="-0.06 -6.93889e-18 -0.00125" rpy="-1.44353e-16 -1.26989e-64 1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\57155k526_stainless_steel_ball_bearing__6.stl"/>
+      </geometry>
+      <material name="57155k526_stainless_steel_ball_bearing_6_material">
+        <color rgba="0.901961 0.901961 0.901961 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.06 -6.93889e-18 -0.00125" rpy="-1.44353e-16 -1.26989e-64 1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\57155k526_stainless_steel_ball_bearing__6.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part 57155k526_stainless_steel_ball_bearing_7 -->
+    <visual>
+      <origin xyz="-0.06 -6.93889e-18 -0.00125" rpy="-1.44353e-16 -1.26989e-64 1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\57155k526_stainless_steel_ball_bearing__7.stl"/>
+      </geometry>
+      <material name="57155k526_stainless_steel_ball_bearing_7_material">
+        <color rgba="0.901961 0.901961 0.901961 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.06 -6.93889e-18 -0.00125" rpy="-1.44353e-16 -1.26989e-64 1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\57155k526_stainless_steel_ball_bearing__7.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part 57155k526_stainless_steel_ball_bearing_8 -->
+    <visual>
+      <origin xyz="-0.06 -6.93889e-18 -0.00125" rpy="-1.44353e-16 -1.26989e-64 1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\57155k526_stainless_steel_ball_bearing__8.stl"/>
+      </geometry>
+      <material name="57155k526_stainless_steel_ball_bearing_8_material">
+        <color rgba="0.901961 0.901961 0.901961 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.06 -6.93889e-18 -0.00125" rpy="-1.44353e-16 -1.26989e-64 1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\57155k526_stainless_steel_ball_bearing__8.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part 57155k526_stainless_steel_ball_bearing_9 -->
+    <visual>
+      <origin xyz="-0.06 -6.93889e-18 -0.00125" rpy="-1.44353e-16 -1.26989e-64 1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\57155k526_stainless_steel_ball_bearing__9.stl"/>
+      </geometry>
+      <material name="57155k526_stainless_steel_ball_bearing_9_material">
+        <color rgba="0.901961 0.901961 0.901961 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.06 -6.93889e-18 -0.00125" rpy="-1.44353e-16 -1.26989e-64 1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\57155k526_stainless_steel_ball_bearing__9.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part 57155k526_stainless_steel_ball_bearing_10 -->
+    <visual>
+      <origin xyz="-0.06 -6.93889e-18 -0.00125" rpy="-1.44353e-16 -1.26989e-64 1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\57155k526_stainless_steel_ball_bearing__10.stl"/>
+      </geometry>
+      <material name="57155k526_stainless_steel_ball_bearing_10_material">
+        <color rgba="0.901961 0.901961 0.901961 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.06 -6.93889e-18 -0.00125" rpy="-1.44353e-16 -1.26989e-64 1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\57155k526_stainless_steel_ball_bearing__10.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part 57155k526_stainless_steel_ball_bearing_11 -->
+    <visual>
+      <origin xyz="-0.06 -6.93889e-18 -0.00125" rpy="-1.44353e-16 -1.26989e-64 1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\57155k526_stainless_steel_ball_bearing__11.stl"/>
+      </geometry>
+      <material name="57155k526_stainless_steel_ball_bearing_11_material">
+        <color rgba="0.901961 0.901961 0.901961 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.06 -6.93889e-18 -0.00125" rpy="-1.44353e-16 -1.26989e-64 1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\57155k526_stainless_steel_ball_bearing__11.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part 57155k526_stainless_steel_ball_bearing_12 -->
+    <visual>
+      <origin xyz="-0.06 -6.93889e-18 -0.00125" rpy="-1.44353e-16 -1.26989e-64 1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\57155k526_stainless_steel_ball_bearing__12.stl"/>
+      </geometry>
+      <material name="57155k526_stainless_steel_ball_bearing_12_material">
+        <color rgba="0.901961 0.901961 0.901961 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.06 -6.93889e-18 -0.00125" rpy="-1.44353e-16 -1.26989e-64 1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\57155k526_stainless_steel_ball_bearing__12.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part 57155k526_stainless_steel_ball_bearing_13 -->
+    <visual>
+      <origin xyz="-0.06 -6.93889e-18 -0.00125" rpy="-1.44353e-16 -1.26989e-64 1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\57155k526_stainless_steel_ball_bearing__13.stl"/>
+      </geometry>
+      <material name="57155k526_stainless_steel_ball_bearing_13_material">
+        <color rgba="0.901961 0.901961 0.901961 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.06 -6.93889e-18 -0.00125" rpy="-1.44353e-16 -1.26989e-64 1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\57155k526_stainless_steel_ball_bearing__13.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part 57155k526_stainless_steel_ball_bearing_14 -->
+    <visual>
+      <origin xyz="6.93889e-18 0 -0.00125" rpy="-1.44353e-16 -1.26989e-64 1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\57155k526_stainless_steel_ball_bearing__7.stl"/>
+      </geometry>
+      <material name="57155k526_stainless_steel_ball_bearing_14_material">
+        <color rgba="0.901961 0.901961 0.901961 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="6.93889e-18 0 -0.00125" rpy="-1.44353e-16 -1.26989e-64 1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\57155k526_stainless_steel_ball_bearing__7.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part texas_rge0024c_vqfn_24_1ep_4x4mm_p0_5mm_ep2_1x2_1mm -->
+    <visual>
+      <origin xyz="-0.1795 0.1 0.0052" rpy="-1.5708 -1.26989e-64 1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\texas_rge0024c_vqfn_24_1ep_4x4mm_p0_5mm_ep2_1x2_1mm.stl"/>
+      </geometry>
+      <material name="texas_rge0024c_vqfn_24_1ep_4x4mm_p0_5mm_ep2_1x2_1mm_material">
+        <color rgba="0.823529 0.819608 0.780392 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.1795 0.1 0.0052" rpy="-1.5708 -1.26989e-64 1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\texas_rge0024c_vqfn_24_1ep_4x4mm_p0_5mm_ep2_1x2_1mm.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part r_0201_0603metric_7 -->
+    <visual>
+      <origin xyz="-0.1795 0.1 0.0052" rpy="-1.5708 -1.26989e-64 1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\r_0201_0603metric_7.stl"/>
+      </geometry>
+      <material name="r_0201_0603metric_7_material">
+        <color rgba="0.823529 0.819608 0.780392 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.1795 0.1 0.0052" rpy="-1.5708 -1.26989e-64 1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\r_0201_0603metric_7.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part r_0201_0603metric_1 -->
+    <visual>
+      <origin xyz="-0.1795 0.1 0.0052" rpy="-1.5708 -1.26989e-64 1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\r_0201_0603metric_1.stl"/>
+      </geometry>
+      <material name="r_0201_0603metric_1_material">
+        <color rgba="0.823529 0.819608 0.780392 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.1795 0.1 0.0052" rpy="-1.5708 -1.26989e-64 1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\r_0201_0603metric_1.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part r_0201_0603metric_9 -->
+    <visual>
+      <origin xyz="-0.1795 0.1 0.0052" rpy="-1.5708 -1.26989e-64 1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\r_0201_0603metric_9.stl"/>
+      </geometry>
+      <material name="r_0201_0603metric_9_material">
+        <color rgba="0.823529 0.819608 0.780392 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.1795 0.1 0.0052" rpy="-1.5708 -1.26989e-64 1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\r_0201_0603metric_9.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part r_0201_0603metric_5 -->
+    <visual>
+      <origin xyz="-0.1795 0.1 0.0052" rpy="-1.5708 -1.26989e-64 1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\r_0201_0603metric_5.stl"/>
+      </geometry>
+      <material name="r_0201_0603metric_5_material">
+        <color rgba="0.823529 0.819608 0.780392 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.1795 0.1 0.0052" rpy="-1.5708 -1.26989e-64 1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\r_0201_0603metric_5.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part r_0201_0603metric -->
+    <visual>
+      <origin xyz="-0.1795 0.1 0.0052" rpy="-1.5708 -1.26989e-64 1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\r_0201_0603metric.stl"/>
+      </geometry>
+      <material name="r_0201_0603metric_material">
+        <color rgba="0.823529 0.819608 0.780392 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.1795 0.1 0.0052" rpy="-1.5708 -1.26989e-64 1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\r_0201_0603metric.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part r_0201_0603metric_8 -->
+    <visual>
+      <origin xyz="-0.1795 0.1 0.0052" rpy="-1.5708 -1.26989e-64 1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\r_0201_0603metric_8.stl"/>
+      </geometry>
+      <material name="r_0201_0603metric_8_material">
+        <color rgba="0.823529 0.819608 0.780392 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.1795 0.1 0.0052" rpy="-1.5708 -1.26989e-64 1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\r_0201_0603metric_8.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part r_0201_0603metric_2 -->
+    <visual>
+      <origin xyz="-0.1795 0.1 0.0052" rpy="-1.5708 -1.26989e-64 1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\r_0201_0603metric_2.stl"/>
+      </geometry>
+      <material name="r_0201_0603metric_2_material">
+        <color rgba="0.823529 0.819608 0.780392 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.1795 0.1 0.0052" rpy="-1.5708 -1.26989e-64 1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\r_0201_0603metric_2.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part handy_pcb -->
+    <visual>
+      <origin xyz="-0.1795 0.1 0.0052" rpy="-1.5708 -1.26989e-64 1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\handy_pcb.stl"/>
+      </geometry>
+      <material name="handy_pcb_material">
+        <color rgba="0.313725 0.486275 0.411765 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.1795 0.1 0.0052" rpy="-1.5708 -1.26989e-64 1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\handy_pcb.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part r_0201_0603metric_3 -->
+    <visual>
+      <origin xyz="-0.1795 0.1 0.0052" rpy="-1.5708 -1.26989e-64 1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\r_0201_0603metric_3.stl"/>
+      </geometry>
+      <material name="r_0201_0603metric_3_material">
+        <color rgba="0.823529 0.819608 0.780392 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.1795 0.1 0.0052" rpy="-1.5708 -1.26989e-64 1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\r_0201_0603metric_3.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part c_0201_0603metric_1 -->
+    <visual>
+      <origin xyz="-0.1795 0.1 0.0052" rpy="-1.5708 -1.26989e-64 1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\c_0201_0603metric_1.stl"/>
+      </geometry>
+      <material name="c_0201_0603metric_1_material">
+        <color rgba="0.823529 0.819608 0.780392 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.1795 0.1 0.0052" rpy="-1.5708 -1.26989e-64 1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\c_0201_0603metric_1.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part r_0201_0603metric_6 -->
+    <visual>
+      <origin xyz="-0.1795 0.1 0.0052" rpy="-1.5708 -1.26989e-64 1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\r_0201_0603metric_6.stl"/>
+      </geometry>
+      <material name="r_0201_0603metric_6_material">
+        <color rgba="0.823529 0.819608 0.780392 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.1795 0.1 0.0052" rpy="-1.5708 -1.26989e-64 1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\r_0201_0603metric_6.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part r_0201_0603metric_4 -->
+    <visual>
+      <origin xyz="-0.1795 0.1 0.0052" rpy="-1.5708 -1.26989e-64 1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\r_0201_0603metric_4.stl"/>
+      </geometry>
+      <material name="r_0201_0603metric_4_material">
+        <color rgba="0.823529 0.819608 0.780392 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.1795 0.1 0.0052" rpy="-1.5708 -1.26989e-64 1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\r_0201_0603metric_4.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part c_0201_0603metric -->
+    <visual>
+      <origin xyz="-0.1795 0.1 0.0052" rpy="-1.5708 -1.26989e-64 1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\c_0201_0603metric.stl"/>
+      </geometry>
+      <material name="c_0201_0603metric_material">
+        <color rgba="0.823529 0.819608 0.780392 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.1795 0.1 0.0052" rpy="-1.5708 -1.26989e-64 1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\c_0201_0603metric.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link passive_link_assembly__configuration_default -->
+  <link name="passive_link_assembly__configuration_default">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-09"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+    <!-- Part m2x2_5_insert_2 -->
+    <visual>
+      <origin xyz="-1.38778e-17 0 0" rpy="3.14159 5.36023e-64 -1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\m2x2_5_insert.stl"/>
+      </geometry>
+      <material name="m2x2_5_insert_2_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-1.38778e-17 0 0" rpy="3.14159 5.36023e-64 -1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\m2x2_5_insert.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part magnet__configuration_default -->
+    <visual>
+      <origin xyz="-0.0225 3.46945e-18 -0.00305" rpy="3.14159 5.36023e-64 -1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\magnet__configuration_default.stl"/>
+      </geometry>
+      <material name="magnet__configuration_default_material">
+        <color rgba="0.647059 0.647059 0.647059 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0225 3.46945e-18 -0.00305" rpy="3.14159 5.36023e-64 -1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\magnet__configuration_default.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part passive_link__configuration_default -->
+    <visual>
+      <origin xyz="-0.0225 3.46945e-18 -0.00505" rpy="-5.43296e-64 5.36023e-64 -1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\passive_link__configuration_default.stl"/>
+      </geometry>
+      <material name="passive_link__configuration_default_material">
+        <color rgba="0.231373 0.380392 0.705882 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0225 3.46945e-18 -0.00505" rpy="-5.43296e-64 5.36023e-64 -1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\passive_link__configuration_default.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part magnet__configuration_default_2 -->
+    <visual>
+      <origin xyz="0.0225 -6.93889e-18 -0.00305" rpy="3.14159 5.36023e-64 -1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\magnet__configuration_default.stl"/>
+      </geometry>
+      <material name="magnet__configuration_default_2_material">
+        <color rgba="0.647059 0.647059 0.647059 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0225 -6.93889e-18 -0.00305" rpy="3.14159 5.36023e-64 -1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\magnet__configuration_default.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part m2x2_5_insert_3 -->
+    <visual>
+      <origin xyz="-0.045 -3.46945e-18 3.46945e-18" rpy="3.14159 5.36023e-64 -1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\m2x2_5_insert.stl"/>
+      </geometry>
+      <material name="m2x2_5_insert_3_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.045 -3.46945e-18 3.46945e-18" rpy="3.14159 5.36023e-64 -1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\m2x2_5_insert.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link part_1 -->
+  <link name="part_1">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-09"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+    <!-- Part part_1_3 -->
+    <visual>
+      <origin xyz="-0.0207217 -0.005 7.5e-05" rpy="-1.5708 4.9305e-64 1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\part_1__3.stl"/>
+      </geometry>
+      <material name="part_1_3_material">
+        <color rgba="0.231373 0.380392 0.705882 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0207217 -0.005 7.5e-05" rpy="-1.5708 4.9305e-64 1.01465e-17"/>
+      <geometry>
+        <mesh filename="package://assets\part_1__3.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Joint from passive_link_assembly__configuration_default to part_1 -->
+  <joint name="index_3" type="revolute">
+    <origin xyz="-0.045 0 3.46945e-18" rpy="-3.14159 -1.84264e-47 -1.01465e-17"/>
+    <parent link="passive_link_assembly__configuration_default"/>
+    <child link="part_1"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
+  </joint>
+  <!-- Joint from encoder_link_assembly to passive_link_assembly__configuration_default -->
+  <joint name="index_1" type="revolute">
+    <origin xyz="-0.06 -1.04083e-17 0" rpy="3.14159 1.10559e-47 1.01465e-17"/>
+    <parent link="encoder_link_assembly"/>
+    <child link="passive_link_assembly__configuration_default"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
+  </joint>
+  <!-- Joint from base to encoder_link_assembly -->
+  <joint name="index_0" type="revolute">
+    <origin xyz="0.0259773 -0.0367889 0.0136569" rpy="1.5708 0.785398 1.5708"/>
+    <parent link="base"/>
+    <child link="encoder_link_assembly"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
+  </joint>
+  <!-- Link part_2 -->
+  <link name="part_2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-09"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+    <!-- Part part_2 -->
+    <visual>
+      <origin xyz="-0.0025 -0.013 0.00255" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets\part_2.stl"/>
+      </geometry>
+      <material name="part_2_material">
+        <color rgba="0.647059 0.647059 0.647059 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0025 -0.013 0.00255" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets\part_2.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link encoder_link_assembly_2 -->
+  <link name="encoder_link_assembly_2">
+    <inertial>
+      <origin xyz="0.0260363 8.19879e-20 0.000778722" rpy="0 0 0"/>
+      <mass value="0.000597845"/>
+      <inertia ixx="7.54499e-09" ixy="2.40574e-24" ixz="-4.80745e-09" iyy="3.46785e-07" iyz="2.09816e-25" izz="3.41347e-07"/>
+    </inertial>
+    <!-- Part socket_button_head_screw_m2x0_4_x_6__26a03d688f50a4abcad31a07665ed233_2 -->
+    <visual>
+      <origin xyz="0.03 0 0.00806" rpy="0 -1.08886e-17 0"/>
+      <geometry>
+        <mesh filename="package://assets\socket_button_head_screw_m2x0_4_x_6__26a03d688f50a4abcad31a07665ed233.stl"/>
+      </geometry>
+      <material name="socket_button_head_screw_m2x0_4_x_6__26a03d688f50a4abcad31a07665ed233_2_material">
+        <color rgba="0.603922 0.647059 0.686275 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.03 0 0.00806" rpy="0 -1.08886e-17 0"/>
+      <geometry>
+        <mesh filename="package://assets\socket_button_head_screw_m2x0_4_x_6__26a03d688f50a4abcad31a07665ed233.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part m2x2_5_insert_4 -->
+    <visual>
+      <origin xyz="0.03 0 0.0027" rpy="0 -1.08886e-17 0"/>
+      <geometry>
+        <mesh filename="package://assets\m2x2_5_insert.stl"/>
+      </geometry>
+      <material name="m2x2_5_insert_4_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.03 0 0.0027" rpy="0 -1.08886e-17 0"/>
+      <geometry>
+        <mesh filename="package://assets\m2x2_5_insert.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part encoder_link_2 -->
+    <visual>
+      <origin xyz="0.03 0 -0.0018" rpy="3.14159 -1.08886e-17 0"/>
+      <geometry>
+        <mesh filename="package://assets\encoder_link.stl"/>
+      </geometry>
+      <material name="encoder_link_2_material">
+        <color rgba="0.231373 0.380392 0.705882 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.03 0 -0.0018" rpy="3.14159 -1.08886e-17 0"/>
+      <geometry>
+        <mesh filename="package://assets\encoder_link.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part 57155k526_stainless_steel_ball_bearing_15 -->
+    <visual>
+      <origin xyz="-6.93889e-18 0 -0.00125" rpy="-1.44353e-16 -1.08886e-17 0"/>
+      <geometry>
+        <mesh filename="package://assets\57155k526_stainless_steel_ball_bearing.stl"/>
+      </geometry>
+      <material name="57155k526_stainless_steel_ball_bearing_15_material">
+        <color rgba="0.901961 0.901961 0.901961 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-6.93889e-18 0 -0.00125" rpy="-1.44353e-16 -1.08886e-17 0"/>
+      <geometry>
+        <mesh filename="package://assets\57155k526_stainless_steel_ball_bearing.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part 57155k526_stainless_steel_ball_bearing_16 -->
+    <visual>
+      <origin xyz="-6.93889e-18 0 -0.00125" rpy="-1.44353e-16 -1.08886e-17 0"/>
+      <geometry>
+        <mesh filename="package://assets\57155k526_stainless_steel_ball_bearing__2.stl"/>
+      </geometry>
+      <material name="57155k526_stainless_steel_ball_bearing_16_material">
+        <color rgba="0.901961 0.901961 0.901961 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-6.93889e-18 0 -0.00125" rpy="-1.44353e-16 -1.08886e-17 0"/>
+      <geometry>
+        <mesh filename="package://assets\57155k526_stainless_steel_ball_bearing__2.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part 57155k526_stainless_steel_ball_bearing_17 -->
+    <visual>
+      <origin xyz="-6.93889e-18 0 -0.00125" rpy="-1.44353e-16 -1.08886e-17 0"/>
+      <geometry>
+        <mesh filename="package://assets\57155k526_stainless_steel_ball_bearing__3.stl"/>
+      </geometry>
+      <material name="57155k526_stainless_steel_ball_bearing_17_material">
+        <color rgba="0.901961 0.901961 0.901961 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-6.93889e-18 0 -0.00125" rpy="-1.44353e-16 -1.08886e-17 0"/>
+      <geometry>
+        <mesh filename="package://assets\57155k526_stainless_steel_ball_bearing__3.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part 57155k526_stainless_steel_ball_bearing_18 -->
+    <visual>
+      <origin xyz="-6.93889e-18 0 -0.00125" rpy="-1.44353e-16 -1.08886e-17 0"/>
+      <geometry>
+        <mesh filename="package://assets\57155k526_stainless_steel_ball_bearing__4.stl"/>
+      </geometry>
+      <material name="57155k526_stainless_steel_ball_bearing_18_material">
+        <color rgba="0.901961 0.901961 0.901961 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-6.93889e-18 0 -0.00125" rpy="-1.44353e-16 -1.08886e-17 0"/>
+      <geometry>
+        <mesh filename="package://assets\57155k526_stainless_steel_ball_bearing__4.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part 57155k526_stainless_steel_ball_bearing_19 -->
+    <visual>
+      <origin xyz="-6.93889e-18 0 -0.00125" rpy="-1.44353e-16 -1.08886e-17 0"/>
+      <geometry>
+        <mesh filename="package://assets\57155k526_stainless_steel_ball_bearing__5.stl"/>
+      </geometry>
+      <material name="57155k526_stainless_steel_ball_bearing_19_material">
+        <color rgba="0.901961 0.901961 0.901961 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-6.93889e-18 0 -0.00125" rpy="-1.44353e-16 -1.08886e-17 0"/>
+      <geometry>
+        <mesh filename="package://assets\57155k526_stainless_steel_ball_bearing__5.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part 57155k526_stainless_steel_ball_bearing_20 -->
+    <visual>
+      <origin xyz="-6.93889e-18 0 -0.00125" rpy="-1.44353e-16 -1.08886e-17 0"/>
+      <geometry>
+        <mesh filename="package://assets\57155k526_stainless_steel_ball_bearing__6.stl"/>
+      </geometry>
+      <material name="57155k526_stainless_steel_ball_bearing_20_material">
+        <color rgba="0.901961 0.901961 0.901961 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-6.93889e-18 0 -0.00125" rpy="-1.44353e-16 -1.08886e-17 0"/>
+      <geometry>
+        <mesh filename="package://assets\57155k526_stainless_steel_ball_bearing__6.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part 57155k526_stainless_steel_ball_bearing_21 -->
+    <visual>
+      <origin xyz="-6.93889e-18 0 -0.00125" rpy="-1.44353e-16 -1.08886e-17 0"/>
+      <geometry>
+        <mesh filename="package://assets\57155k526_stainless_steel_ball_bearing__7.stl"/>
+      </geometry>
+      <material name="57155k526_stainless_steel_ball_bearing_21_material">
+        <color rgba="0.901961 0.901961 0.901961 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-6.93889e-18 0 -0.00125" rpy="-1.44353e-16 -1.08886e-17 0"/>
+      <geometry>
+        <mesh filename="package://assets\57155k526_stainless_steel_ball_bearing__7.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part 57155k526_stainless_steel_ball_bearing_22 -->
+    <visual>
+      <origin xyz="-6.93889e-18 0 -0.00125" rpy="-1.44353e-16 -1.08886e-17 0"/>
+      <geometry>
+        <mesh filename="package://assets\57155k526_stainless_steel_ball_bearing__8.stl"/>
+      </geometry>
+      <material name="57155k526_stainless_steel_ball_bearing_22_material">
+        <color rgba="0.901961 0.901961 0.901961 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-6.93889e-18 0 -0.00125" rpy="-1.44353e-16 -1.08886e-17 0"/>
+      <geometry>
+        <mesh filename="package://assets\57155k526_stainless_steel_ball_bearing__8.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part 57155k526_stainless_steel_ball_bearing_23 -->
+    <visual>
+      <origin xyz="-6.93889e-18 0 -0.00125" rpy="-1.44353e-16 -1.08886e-17 0"/>
+      <geometry>
+        <mesh filename="package://assets\57155k526_stainless_steel_ball_bearing__9.stl"/>
+      </geometry>
+      <material name="57155k526_stainless_steel_ball_bearing_23_material">
+        <color rgba="0.901961 0.901961 0.901961 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-6.93889e-18 0 -0.00125" rpy="-1.44353e-16 -1.08886e-17 0"/>
+      <geometry>
+        <mesh filename="package://assets\57155k526_stainless_steel_ball_bearing__9.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part 57155k526_stainless_steel_ball_bearing_24 -->
+    <visual>
+      <origin xyz="-6.93889e-18 0 -0.00125" rpy="-1.44353e-16 -1.08886e-17 0"/>
+      <geometry>
+        <mesh filename="package://assets\57155k526_stainless_steel_ball_bearing__10.stl"/>
+      </geometry>
+      <material name="57155k526_stainless_steel_ball_bearing_24_material">
+        <color rgba="0.901961 0.901961 0.901961 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-6.93889e-18 0 -0.00125" rpy="-1.44353e-16 -1.08886e-17 0"/>
+      <geometry>
+        <mesh filename="package://assets\57155k526_stainless_steel_ball_bearing__10.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part 57155k526_stainless_steel_ball_bearing_25 -->
+    <visual>
+      <origin xyz="-6.93889e-18 0 -0.00125" rpy="-1.44353e-16 -1.08886e-17 0"/>
+      <geometry>
+        <mesh filename="package://assets\57155k526_stainless_steel_ball_bearing__11.stl"/>
+      </geometry>
+      <material name="57155k526_stainless_steel_ball_bearing_25_material">
+        <color rgba="0.901961 0.901961 0.901961 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-6.93889e-18 0 -0.00125" rpy="-1.44353e-16 -1.08886e-17 0"/>
+      <geometry>
+        <mesh filename="package://assets\57155k526_stainless_steel_ball_bearing__11.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part 57155k526_stainless_steel_ball_bearing_26 -->
+    <visual>
+      <origin xyz="-6.93889e-18 0 -0.00125" rpy="-1.44353e-16 -1.08886e-17 0"/>
+      <geometry>
+        <mesh filename="package://assets\57155k526_stainless_steel_ball_bearing__12.stl"/>
+      </geometry>
+      <material name="57155k526_stainless_steel_ball_bearing_26_material">
+        <color rgba="0.901961 0.901961 0.901961 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-6.93889e-18 0 -0.00125" rpy="-1.44353e-16 -1.08886e-17 0"/>
+      <geometry>
+        <mesh filename="package://assets\57155k526_stainless_steel_ball_bearing__12.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part 57155k526_stainless_steel_ball_bearing_27 -->
+    <visual>
+      <origin xyz="-6.93889e-18 0 -0.00125" rpy="-1.44353e-16 -1.08886e-17 0"/>
+      <geometry>
+        <mesh filename="package://assets\57155k526_stainless_steel_ball_bearing__13.stl"/>
+      </geometry>
+      <material name="57155k526_stainless_steel_ball_bearing_27_material">
+        <color rgba="0.901961 0.901961 0.901961 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-6.93889e-18 0 -0.00125" rpy="-1.44353e-16 -1.08886e-17 0"/>
+      <geometry>
+        <mesh filename="package://assets\57155k526_stainless_steel_ball_bearing__13.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part 57155k526_stainless_steel_ball_bearing_28 -->
+    <visual>
+      <origin xyz="0.06 0 -0.00125" rpy="-1.44353e-16 -1.08886e-17 0"/>
+      <geometry>
+        <mesh filename="package://assets\57155k526_stainless_steel_ball_bearing__7.stl"/>
+      </geometry>
+      <material name="57155k526_stainless_steel_ball_bearing_28_material">
+        <color rgba="0.901961 0.901961 0.901961 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.06 0 -0.00125" rpy="-1.44353e-16 -1.08886e-17 0"/>
+      <geometry>
+        <mesh filename="package://assets\57155k526_stainless_steel_ball_bearing__7.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part texas_rge0024c_vqfn_24_1ep_4x4mm_p0_5mm_ep2_1x2_1mm_2 -->
+    <visual>
+      <origin xyz="-0.1195 0.1 0.0052" rpy="-1.5708 -1.08886e-17 0"/>
+      <geometry>
+        <mesh filename="package://assets\texas_rge0024c_vqfn_24_1ep_4x4mm_p0_5mm_ep2_1x2_1mm.stl"/>
+      </geometry>
+      <material name="texas_rge0024c_vqfn_24_1ep_4x4mm_p0_5mm_ep2_1x2_1mm_2_material">
+        <color rgba="0.823529 0.819608 0.780392 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.1195 0.1 0.0052" rpy="-1.5708 -1.08886e-17 0"/>
+      <geometry>
+        <mesh filename="package://assets\texas_rge0024c_vqfn_24_1ep_4x4mm_p0_5mm_ep2_1x2_1mm.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part r_0201_0603metric_7_2 -->
+    <visual>
+      <origin xyz="-0.1195 0.1 0.0052" rpy="-1.5708 -1.08886e-17 0"/>
+      <geometry>
+        <mesh filename="package://assets\r_0201_0603metric_7.stl"/>
+      </geometry>
+      <material name="r_0201_0603metric_7_2_material">
+        <color rgba="0.823529 0.819608 0.780392 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.1195 0.1 0.0052" rpy="-1.5708 -1.08886e-17 0"/>
+      <geometry>
+        <mesh filename="package://assets\r_0201_0603metric_7.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part r_0201_0603metric_1_2 -->
+    <visual>
+      <origin xyz="-0.1195 0.1 0.0052" rpy="-1.5708 -1.08886e-17 0"/>
+      <geometry>
+        <mesh filename="package://assets\r_0201_0603metric_1.stl"/>
+      </geometry>
+      <material name="r_0201_0603metric_1_2_material">
+        <color rgba="0.823529 0.819608 0.780392 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.1195 0.1 0.0052" rpy="-1.5708 -1.08886e-17 0"/>
+      <geometry>
+        <mesh filename="package://assets\r_0201_0603metric_1.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part r_0201_0603metric_9_2 -->
+    <visual>
+      <origin xyz="-0.1195 0.1 0.0052" rpy="-1.5708 -1.08886e-17 0"/>
+      <geometry>
+        <mesh filename="package://assets\r_0201_0603metric_9.stl"/>
+      </geometry>
+      <material name="r_0201_0603metric_9_2_material">
+        <color rgba="0.823529 0.819608 0.780392 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.1195 0.1 0.0052" rpy="-1.5708 -1.08886e-17 0"/>
+      <geometry>
+        <mesh filename="package://assets\r_0201_0603metric_9.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part r_0201_0603metric_5_2 -->
+    <visual>
+      <origin xyz="-0.1195 0.1 0.0052" rpy="-1.5708 -1.08886e-17 0"/>
+      <geometry>
+        <mesh filename="package://assets\r_0201_0603metric_5.stl"/>
+      </geometry>
+      <material name="r_0201_0603metric_5_2_material">
+        <color rgba="0.823529 0.819608 0.780392 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.1195 0.1 0.0052" rpy="-1.5708 -1.08886e-17 0"/>
+      <geometry>
+        <mesh filename="package://assets\r_0201_0603metric_5.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part r_0201_0603metric_2 -->
+    <visual>
+      <origin xyz="-0.1195 0.1 0.0052" rpy="-1.5708 -1.08886e-17 0"/>
+      <geometry>
+        <mesh filename="package://assets\r_0201_0603metric.stl"/>
+      </geometry>
+      <material name="r_0201_0603metric_2_material">
+        <color rgba="0.823529 0.819608 0.780392 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.1195 0.1 0.0052" rpy="-1.5708 -1.08886e-17 0"/>
+      <geometry>
+        <mesh filename="package://assets\r_0201_0603metric.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part r_0201_0603metric_8_2 -->
+    <visual>
+      <origin xyz="-0.1195 0.1 0.0052" rpy="-1.5708 -1.08886e-17 0"/>
+      <geometry>
+        <mesh filename="package://assets\r_0201_0603metric_8.stl"/>
+      </geometry>
+      <material name="r_0201_0603metric_8_2_material">
+        <color rgba="0.823529 0.819608 0.780392 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.1195 0.1 0.0052" rpy="-1.5708 -1.08886e-17 0"/>
+      <geometry>
+        <mesh filename="package://assets\r_0201_0603metric_8.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part r_0201_0603metric_2_2 -->
+    <visual>
+      <origin xyz="-0.1195 0.1 0.0052" rpy="-1.5708 -1.08886e-17 0"/>
+      <geometry>
+        <mesh filename="package://assets\r_0201_0603metric_2.stl"/>
+      </geometry>
+      <material name="r_0201_0603metric_2_2_material">
+        <color rgba="0.823529 0.819608 0.780392 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.1195 0.1 0.0052" rpy="-1.5708 -1.08886e-17 0"/>
+      <geometry>
+        <mesh filename="package://assets\r_0201_0603metric_2.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part handy_pcb_2 -->
+    <visual>
+      <origin xyz="-0.1195 0.1 0.0052" rpy="-1.5708 -1.08886e-17 0"/>
+      <geometry>
+        <mesh filename="package://assets\handy_pcb.stl"/>
+      </geometry>
+      <material name="handy_pcb_2_material">
+        <color rgba="0.313725 0.486275 0.411765 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.1195 0.1 0.0052" rpy="-1.5708 -1.08886e-17 0"/>
+      <geometry>
+        <mesh filename="package://assets\handy_pcb.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part r_0201_0603metric_3_2 -->
+    <visual>
+      <origin xyz="-0.1195 0.1 0.0052" rpy="-1.5708 -1.08886e-17 0"/>
+      <geometry>
+        <mesh filename="package://assets\r_0201_0603metric_3.stl"/>
+      </geometry>
+      <material name="r_0201_0603metric_3_2_material">
+        <color rgba="0.823529 0.819608 0.780392 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.1195 0.1 0.0052" rpy="-1.5708 -1.08886e-17 0"/>
+      <geometry>
+        <mesh filename="package://assets\r_0201_0603metric_3.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part c_0201_0603metric_1_2 -->
+    <visual>
+      <origin xyz="-0.1195 0.1 0.0052" rpy="-1.5708 -1.08886e-17 0"/>
+      <geometry>
+        <mesh filename="package://assets\c_0201_0603metric_1.stl"/>
+      </geometry>
+      <material name="c_0201_0603metric_1_2_material">
+        <color rgba="0.823529 0.819608 0.780392 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.1195 0.1 0.0052" rpy="-1.5708 -1.08886e-17 0"/>
+      <geometry>
+        <mesh filename="package://assets\c_0201_0603metric_1.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part r_0201_0603metric_6_2 -->
+    <visual>
+      <origin xyz="-0.1195 0.1 0.0052" rpy="-1.5708 -1.08886e-17 0"/>
+      <geometry>
+        <mesh filename="package://assets\r_0201_0603metric_6.stl"/>
+      </geometry>
+      <material name="r_0201_0603metric_6_2_material">
+        <color rgba="0.823529 0.819608 0.780392 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.1195 0.1 0.0052" rpy="-1.5708 -1.08886e-17 0"/>
+      <geometry>
+        <mesh filename="package://assets\r_0201_0603metric_6.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part r_0201_0603metric_4_2 -->
+    <visual>
+      <origin xyz="-0.1195 0.1 0.0052" rpy="-1.5708 -1.08886e-17 0"/>
+      <geometry>
+        <mesh filename="package://assets\r_0201_0603metric_4.stl"/>
+      </geometry>
+      <material name="r_0201_0603metric_4_2_material">
+        <color rgba="0.823529 0.819608 0.780392 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.1195 0.1 0.0052" rpy="-1.5708 -1.08886e-17 0"/>
+      <geometry>
+        <mesh filename="package://assets\r_0201_0603metric_4.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part c_0201_0603metric_2 -->
+    <visual>
+      <origin xyz="-0.1195 0.1 0.0052" rpy="-1.5708 -1.08886e-17 0"/>
+      <geometry>
+        <mesh filename="package://assets\c_0201_0603metric.stl"/>
+      </geometry>
+      <material name="c_0201_0603metric_2_material">
+        <color rgba="0.823529 0.819608 0.780392 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.1195 0.1 0.0052" rpy="-1.5708 -1.08886e-17 0"/>
+      <geometry>
+        <mesh filename="package://assets\c_0201_0603metric.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link passive_link_assembly__configuration_thumb -->
+  <link name="passive_link_assembly__configuration_thumb">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-09"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+    <!-- Part m2x2_5_insert_5 -->
+    <visual>
+      <origin xyz="0 6.93889e-18 -2.60209e-18" rpy="3.14159 3.98552e-18 -1.56287e-32"/>
+      <geometry>
+        <mesh filename="package://assets\m2x2_5_insert.stl"/>
+      </geometry>
+      <material name="m2x2_5_insert_5_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 6.93889e-18 -2.60209e-18" rpy="3.14159 3.98552e-18 -1.56287e-32"/>
+      <geometry>
+        <mesh filename="package://assets\m2x2_5_insert.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part magnet__configuration_default_3 -->
+    <visual>
+      <origin xyz="-0.0325 6.93889e-18 -0.00305" rpy="3.14159 3.98552e-18 -1.56287e-32"/>
+      <geometry>
+        <mesh filename="package://assets\magnet__configuration_default.stl"/>
+      </geometry>
+      <material name="magnet__configuration_default_3_material">
+        <color rgba="0.647059 0.647059 0.647059 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0325 6.93889e-18 -0.00305" rpy="3.14159 3.98552e-18 -1.56287e-32"/>
+      <geometry>
+        <mesh filename="package://assets\magnet__configuration_default.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part passive_link__configuration_thumb -->
+    <visual>
+      <origin xyz="-0.0275 0 -0.00505" rpy="-2.47353e-33 3.98552e-18 -1.56287e-32"/>
+      <geometry>
+        <mesh filename="package://assets\passive_link__configuration_thumb.stl"/>
+      </geometry>
+      <material name="passive_link__configuration_thumb_material">
+        <color rgba="0.231373 0.380392 0.705882 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0275 0 -0.00505" rpy="-2.47353e-33 3.98552e-18 -1.56287e-32"/>
+      <geometry>
+        <mesh filename="package://assets\passive_link__configuration_thumb.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part magnet__configuration_default_4 -->
+    <visual>
+      <origin xyz="0.0225 -6.93889e-18 -0.00305" rpy="3.14159 3.98552e-18 -1.56287e-32"/>
+      <geometry>
+        <mesh filename="package://assets\magnet__configuration_default.stl"/>
+      </geometry>
+      <material name="magnet__configuration_default_4_material">
+        <color rgba="0.647059 0.647059 0.647059 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0225 -6.93889e-18 -0.00305" rpy="3.14159 3.98552e-18 -1.56287e-32"/>
+      <geometry>
+        <mesh filename="package://assets\magnet__configuration_default.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part m2x2_5_insert_6 -->
+    <visual>
+      <origin xyz="-0.055 0 -1.38778e-17" rpy="3.14159 3.98552e-18 -1.56287e-32"/>
+      <geometry>
+        <mesh filename="package://assets\m2x2_5_insert.stl"/>
+      </geometry>
+      <material name="m2x2_5_insert_6_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.055 0 -1.38778e-17" rpy="3.14159 3.98552e-18 -1.56287e-32"/>
+      <geometry>
+        <mesh filename="package://assets\m2x2_5_insert.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link part_1_2 -->
+  <link name="part_1_2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-09"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+    <!-- Part part_1_4 -->
+    <visual>
+      <origin xyz="-0.0207217 -0.005 7.5e-05" rpy="-1.5708 -7.43708e-17 2.70991e-30"/>
+      <geometry>
+        <mesh filename="package://assets\part_1__3.stl"/>
+      </geometry>
+      <material name="part_1_4_material">
+        <color rgba="0.231373 0.380392 0.705882 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0207217 -0.005 7.5e-05" rpy="-1.5708 -7.43708e-17 2.70991e-30"/>
+      <geometry>
+        <mesh filename="package://assets\part_1__3.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Joint from passive_link_assembly__configuration_thumb to part_1_2 -->
+  <joint name="thumb_3" type="revolute">
+    <origin xyz="-0.055 -6.93889e-18 -1.21431e-17" rpy="3.14159 -3.66515e-17 3.55596e-14"/>
+    <parent link="passive_link_assembly__configuration_thumb"/>
+    <child link="part_1_2"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
+  </joint>
+  <!-- Joint from encoder_link_assembly_2 to passive_link_assembly__configuration_thumb -->
+  <joint name="thumb_1" type="revolute">
+    <origin xyz="0.06 0 -2.60209e-18" rpy="-3.14159 1.62548e-16 3.14159"/>
+    <parent link="encoder_link_assembly_2"/>
+    <child link="passive_link_assembly__configuration_thumb"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
+  </joint>
+  <!-- Joint from part_2 to encoder_link_assembly_2 -->
+  <joint name="thumb_0" type="revolute">
+    <origin xyz="0 0.012 -0.00866025" rpy="3.14159 1.0472 1.5708"/>
+    <parent link="part_2"/>
+    <child link="encoder_link_assembly_2"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
+  </joint>
+  <!-- Joint from base to part_2 -->
+  <joint name="thumb_4" type="revolute">
+    <origin xyz="0.0335773 0.0457111 -0.007" rpy="-1.5708 -0 1.5708"/>
+    <parent link="base"/>
+    <child link="part_2"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
+  </joint>
+  <!-- Joint from base_link to base -->
+  <joint name="base_link_to_base" type="fixed">
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
+    <parent link="base_link"/>
+    <child link="base"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+</robot>
