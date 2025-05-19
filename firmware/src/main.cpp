@@ -1,57 +1,30 @@
-/*********
-  Rui Santos
-  Complete project details at https://randomnerdtutorials.com  
-*********/
+#include "finger.h"
+#include "config.h"
 
-#include <Wire.h>
-#include <Arduino.h>
-int bus_no=0;
+int addrList[] = ADDR_LIST;
+float offsetList[][2] = OFFSETS_LIST;
+const int fingersNo = sizeof(addrList)/sizeof(int);
+Finger fingers[fingersNo];
+
 void setup() {
-  Wire.begin();
+  
+  
+  Wire.begin(SDA1,SCL1);
   Serial.begin(115200);
-  Serial.println("\nI2C Scanner");
+  Serial.println("\nHandy Test");
+
+  // Setup fingers
+  for(int i=0;i<fingersNo;i++){
+    fingers[i] = Finger(addrList[i],offsetList[i][0],offsetList[i][1]); 
+  }
 }
 
-void TCA9548A(uint8_t bus){
-  Wire.beginTransmission(0x70);  // TCA9548A address is 0x70
-  Wire.write(1 << bus);          // send byte to select bus
-  Wire.endTransmission();
-  Serial.print(bus);
-}
+
 
 void loop() {
-  bus_no = bus_no%8;
-  TCA9548A(bus_no);
-  byte error, address;
-  int nDevices;
-  Serial.println("Scanning...");
-  nDevices = 0;
-  for(address = 1; address < 127; address++ ) {
-    Wire.beginTransmission(address);
-    error = Wire.endTransmission();
-    if (error == 0) {
-      Serial.print("I2C device found at address 0x");
-      if (address<16) {
-        Serial.print("0");
-      }
-      Serial.println(address,HEX);
-      nDevices++;
-    }
-    else if (error==4) {
-      Serial.print("Unknow error at address 0x");
-      if (address<16) {
-        Serial.print("0");
-      }
-      Serial.println(address,HEX);
-    }    
-  }
-  if (nDevices == 0) {
-    Serial.println("No I2C devices found\n");
-  }
-  else {
-    Serial.println("done\n");
-  }
-  delay(5000);  
-  bus_no++;        
+  Serial.print(fingers[0].readAngle(0));
+  Serial.print("\t");
+  Serial.println(fingers[0].readAngle(1));
+  delay(1000/FREQ);
 }
 
