@@ -5,5 +5,5 @@
     "onshape_access_key": "pr2rMI40UYD76oSbyJJytTWB",
     "onshape_secret_key": "GF5EK0SblXFdRpPrSnHTzzNG9WA6zWaBJj7IBWo97wHtXn6p",
     "addDummyBaseLink": true,
-    "packageName": "handy/urdf/"
+    "package_name": "handy_ros2/urdf"
 }

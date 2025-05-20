@@ -18,9 +18,10 @@ import math
 from sensor_msgs.msg import JointState
 from dpali_msgs.msg import DPaliCoordPair
 
-
+import math
 import serial
 import time
+import struct
 
 # Replace with your ESP32's serial port (e.g., 'COM3' for Windows, '/dev/ttyUSB0' for Linux/macOS)
 SERIAL_PORT = "/dev/ttyACM0"
@@ -36,7 +37,7 @@ class JointBridge(Node):
         self.timer = self.create_timer(timer_period, self.timer_callback)
         self.i = 0
         self.ser = serial.Serial(SERIAL_PORT, BAUD_RATE, timeout=1)
-        time.sleep(2)  # Allow time for the connection to establish
+        time.sleep(0.5)  # Allow time for the connection to establish
 
     print("Reading data from ESP32...")
 
@@ -44,23 +45,38 @@ class JointBridge(Node):
         joint_angle = self.get_angles()
         if joint_angle:
             msg = JointState()
-            msg.name = ['thumb_0','thumb_1','thumb_2', 'thumb_3']
+            msg.name = ['thumb_0','thumb_1','thumb_2', 'thumb_3', 'index_0', 'index_1','index_2']
             msg.header.stamp = self.get_clock().now().to_msg()
-            msg.position = [float(0),float(-joint_angle[1]),float(joint_angle[0])] 
+            msg.position = [math.radians(float(i)) for i in joint_angle] 
             msg.velocity = []
             msg.effort=[]
             self.publisher_.publish(msg)
 
-            self.get_logger().info('Publishing: "%s"' % msg.position)
+            #self.get_logger().info('Publishing: "%s"' % msg.position)
 
 
 
     def get_angles(self):
-        angle = None
-        if self.ser.in_waiting > 0:  # Check if data is available
-            line = self.ser.readline().decode('utf-8', errors='ignore').strip()
-        return angle
-
+        angles = None
+        while self.ser.in_waiting >= 30:
+            byte = self.ser.read(1)
+            if byte == b'\xAA':
+                data = self.ser.read(28)
+                end = self.ser.read(1)
+                if end == b'\x55':
+                    try:
+                        angles = struct.unpack('7f', data)
+                        angles = list(angles)
+                        angles[0] = -angles[0]
+                        angles[5] = -angles[5]
+                        angles[2] = -angles[2]
+                        angles[3] = -45.0
+                    except struct.error:
+                        pass
+                break
+        print(angles)
+        self.ser.reset_input_buffer()
+        return angles
 
 def main(args=None):
     rclpy.init(args=args)
