@@ -47,11 +47,15 @@ public:
             TCA9548A(EMPTY_BUS);
             return angle;
         }
-        else
+        else if(enc_no == 1)
         {
             TCA9548A(ENC_1_BUS);
             angle = encoder1.readAngle() * AS5600_RAW_TO_DEGREES;
             TCA9548A(EMPTY_BUS);
+            return angle;
+        }
+        else{
+            angle = 90.0 - encoder1.readAngle() * AS5600_RAW_TO_DEGREES;
             return angle;
         }
     }

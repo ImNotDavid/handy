@@ -5,6 +5,7 @@
 // #define PINKY
 
 #define FREQ 10
+#define IMU 
 
 
 #ifdef THUMB
