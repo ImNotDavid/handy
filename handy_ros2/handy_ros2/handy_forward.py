@@ -60,7 +60,7 @@ class FrameListener(Node):
         self.tf_buffer = Buffer()
         self.tf_listener = TransformListener(self.tf_buffer, self)
         self.tf_publisher = TransformBroadcaster(self)
-        self.timer = self.create_timer(0.1, self.get_transform)
+        self.timer = self.create_timer(0.01, self.get_transform)
 
     def publish_transform(self, vector_i:np.array, vector_t:np.array):
         r = calculateRotation(vector_i,vector_t)

@@ -16,7 +16,6 @@ import rclpy
 from rclpy.node import Node
 import math
 from sensor_msgs.msg import JointState
-from std_msgs.msg import Header
 from geometry_msgs.msg import TransformStamped
 from tf2_msgs.msg import TFMessage
 from handy_ros2.utils import quaternion_from_euler
@@ -39,7 +38,7 @@ class JointBridge(Node):
         super().__init__('handy_bridge')
         self.publisher_ = self.create_publisher(JointState, 'joint_states', 10)
         self.tf_publisher = self.create_publisher(TFMessage, 'tf', 10)
-        timer_period = 0.11  # seconds
+        timer_period = 0.01  # seconds
         self.timer = self.create_timer(timer_period, self.timer_callback)
         self.i = 0
         self.ser = serial.Serial(SERIAL_PORT, BAUD_RATE, timeout=1)
@@ -96,7 +95,6 @@ class JointBridge(Node):
                     except struct.error:
                         pass
                 break
-        print(angles)
         self.ser.reset_input_buffer()
         return angles,quaternion
 
