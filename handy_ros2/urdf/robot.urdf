@@ -682,6 +682,21 @@
       </geometry>
     </collision>
   </link>
+  <!-- Frame index_tip (dummy link + fixed joint) -->
+  <link name="index_tip">
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-9"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+  </link>
+  <joint name="index_tip_frame" type="fixed">
+    <origin xyz="-0.0207217 0.02 7.5e-05" rpy="-1.5708 -0 0"/>
+    <parent link="part_1"/>
+    <child link="index_tip"/>
+    <axis xyz="0 0 0"/>
+  </joint>
   <!-- Joint from passive_link_assembly__configuration_default to part_1 -->
   <joint name="index_2" type="revolute">
     <origin xyz="-0.045 3.46945e-18 3.46945e-18" rpy="-3.14159 -1.84264e-47 0"/>
@@ -1346,6 +1361,21 @@
       </geometry>
     </collision>
   </link>
+  <!-- Frame thumb_tip (dummy link + fixed joint) -->
+  <link name="thumb_tip">
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-9"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+  </link>
+  <joint name="thumb_tip_frame" type="fixed">
+    <origin xyz="-0.0207217 -0.02 7.5e-05" rpy="1.5708 -5.55112e-17 3.15544e-30"/>
+    <parent link="part_1_2"/>
+    <child link="thumb_tip"/>
+    <axis xyz="0 0 0"/>
+  </joint>
   <!-- Joint from passive_link_assembly__configuration_thumb to part_1_2 -->
   <joint name="thumb_2" type="revolute">
     <origin xyz="-0.055 -6.93889e-18 -6.07153e-18" rpy="3.14159 -5.55112e-17 3.55596e-14"/>
