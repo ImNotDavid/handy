@@ -1,7 +1,6 @@
 #include "finger.h"
 #include "config.h"
 #include "imu.h"
-#include "usb.h"
 
 int addrList[] = ADDR_LIST;
 float offsetList[][2] = OFFSETS_LIST;
@@ -12,12 +11,6 @@ int prev_micros = micros();
 
 void setup()
 {
-  USB.PID(0x0001);
-  USB.VID(0x1234);
-  USB.manufacturerName("ICRS");
-  USB.productName("Handy Board");
-  USB.firmwareVersion(0);
-  USB.begin();
   Wire.begin(SDA1, SCL1);
   Serial.begin(115200);
   Serial.println("\nHandy Test");
