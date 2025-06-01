@@ -54,11 +54,19 @@ def generate_launch_description():
     executable='joint_state_publisher',
     name='joint_state_publisher',
     arguments=[default_urdf_model_path])
+  
+  handy_bridge_cmd = Node(
+        package='handy_ros2',  # Replace with your package name
+        executable='bridge',    # Make sure this matches the executable
+        name='handy_bridge',
+        output='screen'
+    )
    
   # Create the launch description and populate
   ld = LaunchDescription()
- 
+  
   # Declare the launch options
+  ld.add_action(handy_bridge_cmd)
   ld.add_action(declare_use_joint_state_pub_cmd)  
   ld.add_action(start_joint_state_publisher_cmd)
   ld.add_action(declare_urdf_model_path_cmd)

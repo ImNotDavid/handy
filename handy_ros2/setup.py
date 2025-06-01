@@ -13,7 +13,8 @@ setup(
         ('share/' + package_name, ['package.xml']),
         (os.path.join('share', package_name, 'launch'), glob(os.path.join('launch', '*launch.[pxy][yma]*'))),
         (os.path.join('share', package_name, 'urdf'), glob(os.path.join('urdf', '*.urdf'))),
-        (os.path.join('share', package_name, 'urdf/assets'), glob(os.path.join('urdf/assets', '**')))
+        (os.path.join('share', package_name, 'urdf/assets'), glob(os.path.join('urdf/assets', '**'))),
+        (os.path.join('share', package_name, package_name), glob(f'{package_name}/*.py')),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -25,6 +26,7 @@ setup(
     entry_points={
         'console_scripts': [
             'bridge = handy_ros2.handy_bridge:main',
+            'forward = handy_ros2.handy_forward:main'
         ],
     },
 )
