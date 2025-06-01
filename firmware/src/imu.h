@@ -20,7 +20,7 @@ void setupIMU(){
   myIMU.autoOffsets();
   Serial.println("Done!");
   myIMU.enableGyrDLPF();
-  myIMU.setGyrDLPF(MPU6500_DLPF_6);
+  myIMU.setGyrDLPF(MPU6500_DLPF_7);
   myIMU.setSampleRateDivider(99); 
   myIMU.setGyrRange(MPU6500_GYRO_RANGE_250);
   myIMU.setAccRange(MPU6500_ACC_RANGE_2G);

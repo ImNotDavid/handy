@@ -4,7 +4,7 @@
 // #define RING
 // #define PINKY
 
-#define FREQ 10
+#define FREQ 100
 #define IMU 
 
 
