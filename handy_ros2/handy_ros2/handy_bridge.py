@@ -19,7 +19,7 @@ from sensor_msgs.msg import JointState
 from std_msgs.msg import Header
 from geometry_msgs.msg import TransformStamped
 from tf2_msgs.msg import TFMessage
-
+from handy_ros2.utils import quaternion_from_euler
 import math
 import serial
 import time
@@ -30,14 +30,8 @@ SERIAL_PORT = "/dev/ttyACM0"
 BAUD_RATE = 115200  # Match the baud rate of your ESP32
 
 
-def euler_to_quaternion(yaw, pitch, roll):
 
-        qx = np.sin(roll/2) * np.cos(pitch/2) * np.cos(yaw/2) - np.cos(roll/2) * np.sin(pitch/2) * np.sin(yaw/2)
-        qy = np.cos(roll/2) * np.sin(pitch/2) * np.cos(yaw/2) + np.sin(roll/2) * np.cos(pitch/2) * np.sin(yaw/2)
-        qz = np.cos(roll/2) * np.cos(pitch/2) * np.sin(yaw/2) - np.sin(roll/2) * np.sin(pitch/2) * np.cos(yaw/2)
-        qw = np.cos(roll/2) * np.cos(pitch/2) * np.cos(yaw/2) + np.sin(roll/2) * np.sin(pitch/2) * np.sin(yaw/2)
 
-        return [qx, qy, qz, qw]
 
 class JointBridge(Node):
 
@@ -66,8 +60,8 @@ class JointBridge(Node):
 
             msg = TransformStamped()
             msg.header.stamp = self.get_clock().now().to_msg()
-            msg.header.frame_id = "base"
-            msg.child_frame_id = "map"
+            msg.header.frame_id = "map"
+            msg.child_frame_id = "base"
             msg._transform.rotation.x = q[0]  
             msg._transform.rotation.y = q[1]  
             msg._transform.rotation.z = q[2]  
@@ -93,7 +87,7 @@ class JointBridge(Node):
                         angles = values[:7]
                         orientation = values[7:]
                         orientation = [math.radians(i) for i in orientation]
-                        quaternion = euler_to_quaternion(-orientation[2],-orientation[1],-orientation[0])
+                        quaternion = quaternion_from_euler(orientation[1],-orientation[0],orientation[2])
                         angles = list(angles)
                         angles[0] = -angles[0]
                         angles[5] = -angles[5]
