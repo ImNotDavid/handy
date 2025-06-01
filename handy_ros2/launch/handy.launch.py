@@ -45,7 +45,8 @@ def generate_launch_description():
     package='robot_state_publisher',
     executable='robot_state_publisher',
     parameters=[{'use_sim_time': False, 
-    'robot_description': Command(['xacro ', urdf_model])}],
+    'robot_description': Command(['xacro ', urdf_model]),
+    'publish_frequency':100.0}],
     arguments=[default_urdf_model_path])
   
   start_joint_state_publisher_cmd = Node(
@@ -53,12 +54,20 @@ def generate_launch_description():
     package='joint_state_publisher',
     executable='joint_state_publisher',
     name='joint_state_publisher',
+    parameters=[{'rate':100}],
     arguments=[default_urdf_model_path])
   
   handy_bridge_cmd = Node(
         package='handy_ros2',  # Replace with your package name
         executable='bridge',    # Make sure this matches the executable
         name='handy_bridge',
+        output='screen'
+    )
+  
+  handy_forward_cmd = Node(
+        package='handy_ros2',  # Replace with your package name
+        executable='forward',    # Make sure this matches the executable
+        name='handy_forward',
         output='screen'
     )
    
@@ -70,7 +79,8 @@ def generate_launch_description():
   ld.add_action(declare_use_joint_state_pub_cmd)  
   ld.add_action(start_joint_state_publisher_cmd)
   ld.add_action(declare_urdf_model_path_cmd)
-  ld.add_action(declare_use_robot_state_pub_cmd)  
+  ld.add_action(declare_use_robot_state_pub_cmd) 
+  ld.add_action(handy_forward_cmd)  
 
   # Add any actions
   ld.add_action(start_robot_state_publisher_cmd)

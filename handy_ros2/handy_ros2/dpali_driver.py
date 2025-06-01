@@ -19,12 +19,13 @@ class DPaliDriver(Node):
         super().__init__('handy_forward')
         self.tf_buffer = Buffer()
         self.tf_listener = TransformListener(self.tf_buffer, self)
-        self.timer = self.create_timer(0.1, self.drive_angles)
+        self.timer = self.create_timer(0.01, self.drive_angles)
         self.publisher_ = self.create_publisher(DPaliCoordPair,"/dpali/set_coords",1)
 
-    def drive_angles(self):
+    def drive_angles(self):#
         coords = self.get_coords_index()
         msg = DPaliCoordPair()
+        msg.header.stamp = self.get_clock().now().to_msg()
         msg.right.x = coords[0]
         msg.right.y = coords[1]
         coords = self.get_coords_thumb()
