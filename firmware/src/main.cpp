@@ -39,7 +39,6 @@ void setup()
     fingers[i].initHaptics();
   }
 
-  fingers[2].setFeedback(255);
 
   led.setPixelColor(0, led.Color(147, 112, 219));
   led.show();    
@@ -51,18 +50,11 @@ void loop()
   if (current > (prev_micros + delay_micros))
   {
     getOrientation();
-    float angles[7] = {
-      fingers[0].readAngle(0), 
-      fingers[0].readAngle(1), 
-      fingers[0].readAngle(2), 
-      0.0, 
-      fingers[1].readAngle(0), 
-      fingers[1].readAngle(1), 
-      fingers[1].readAngle(2)
-    };
-
+    float angles[10] = { fingers[0].readAngle(0), fingers[0].readAngle(1), fingers[0].readAngle(2), 
+                        0.0, fingers[1].readAngle(0), fingers[1].readAngle(1), fingers[1].readAngle(2), 
+                        fingers[2].readAngle(0), fingers[2].readAngle(1), fingers[2].readAngle(2)};
     Serial.write(0xAA);
-    for(int i = 0; i < 7; i++){
+    for(int i = 0; i < 10; i++){
       byte* outBytes = (byte*) &angles[i];
       Serial.write(outBytes,sizeof(float));
     }
@@ -77,3 +69,6 @@ void loop()
   }
   
 }
+
+
+
