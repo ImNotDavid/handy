@@ -16,7 +16,6 @@ private:
     AS5600 encoder0;
     AS5600 encoder1;
     int multi_address;
-    Adafruit_DRV8830 haptic_motor;
     void TCA9548A(uint8_t bus)
     {
         Wire.beginTransmission(multi_address);
@@ -25,6 +24,7 @@ private:
     }
 
 public:
+    Adafruit_DRV8830 haptic_motor;
     Finger() {};
     Finger(int address, float offset0, float offset1, bool haptic = false)
     {   
@@ -83,7 +83,7 @@ public:
         }
     }
 
-    void setFeedback(int speed)
+    void setFeedback(uint8_t speed)
     {   
         if(!hasHaptic)return;
         TCA9548A(MOTOR_BUS);

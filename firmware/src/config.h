@@ -50,7 +50,7 @@
 
 #ifdef PINKY
 #define PINKY_ADDR {0x73,
-#define PINKY_OFFSETS 0.0, 0.0,
+#define PINKY_OFFSETS 210.5, -300.0,
 #define PINKY_HAPTIC 1.0},
 #else
 #define PINKY_ADDR 

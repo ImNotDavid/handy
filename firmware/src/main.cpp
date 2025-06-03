@@ -11,6 +11,30 @@ int delay_micros = 1000000 / FREQ;
 int prev_micros = micros();
 Adafruit_NeoPixel led(LED_COUNT, LED_PIN, NEO_GRBW + NEO_KHZ800);
 
+int target_finger,haptic_value;
+#define BUFFER_SIZE 32
+char inputBuffer[BUFFER_SIZE];
+uint8_t bufferIndex = 0;
+bool receiving = false;
+
+void parseInput(const char* data) {
+  // Expect format: "12,34"
+  char* comma = strchr(data, ',');
+  if (comma != NULL) {
+    *comma = '\0';  // Split the string at the comma
+    target_finger = atoi(data);
+    haptic_value = atoi(comma + 1);
+
+    //Serial.print("Parsed: ");
+    //Serial.print(target_finger);
+    //Serial.print(" and ");
+    //Serial.println(haptic_value);
+    fingers[target_finger].setFeedback(static_cast<uint8_t>(haptic_value));
+  } else {
+    Serial.println("Error: no comma found.");
+  }
+}
+
 
 void setup()
 {
@@ -39,7 +63,7 @@ void setup()
     fingers[i].initHaptics();
   }
 
-
+  fingers[2].haptic_motor.setSpeed(0);
   led.setPixelColor(0, led.Color(147, 112, 219));
   led.show();    
 }
@@ -67,7 +91,20 @@ void loop()
     Serial.write(0x55);
     prev_micros = micros();
   }
-  
+  while (Serial.available()) {
+    char inChar = (char)Serial.read();
+
+    if (inChar == '<') {
+      receiving = true;
+      bufferIndex = 0;
+    } else if (inChar == '>') {
+      receiving = false;
+      inputBuffer[bufferIndex] = '\0';  // Null-terminate the string
+      parseInput(inputBuffer);
+    } else if (receiving && bufferIndex < BUFFER_SIZE - 1) {
+      inputBuffer[bufferIndex++] = inChar;
+    }
+  }
 }
 
 
