@@ -21,7 +21,7 @@ All the gerber files for the PCB are found [here](pcb\output\handy_gbr.zip) and 
 
 The firmware exists as a platformio project in the [`firmware`](firmware) folder. This can be modified to work on any ESP-32 based microcontroller by selecting the appropriate chip in `platformio.ini`. 
 
-## Software
+## ROS
 
 The ROS nodes are written for ROS2 Humble. To install, simply clone this repo into your `ros_ws/src/` folder and `colcon build` in your workspace. Note that rosdeps are not properly setup so some work may need to done manually installing required python packages. 
 
@@ -29,8 +29,14 @@ After sourcing the workspace, running `ros2 launch handy handy.launch.py` should
 
 # Videos
 Here are some examples of Handy being used for manipulation tasks:
-![Rotation](/assets/Rotation.mp4)
-![Translation](/assets/Translation.mp4)
+
+
+https://github.com/user-attachments/assets/99e4fd3a-1bce-4f82-9469-66eb39cce375
+
+
+https://github.com/user-attachments/assets/1d073916-30b5-41df-a31d-748b461f2f68
+
+
 
 # Contact
 If you have any problems (I suspect you will), feel free to reach out to me through [email](mailto:dc1021@ic.ac.uk) or [discord](https://discord.gg/3YKPjgskS3).  
