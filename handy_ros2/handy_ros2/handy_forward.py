@@ -129,7 +129,6 @@ class FrameListener(Node):
             b_to_f = o_to_f-o_to_bf
             o_to_t = vec3ToNp(base_to_thumb.transform.translation)
             bf_to_bt = -o_to_bf + o_to_t
-            print(o_to_f)
             self.publish_transform(b_to_f,bf_to_bt)
             
         except Exception as e:
