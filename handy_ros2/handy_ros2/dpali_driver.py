@@ -39,6 +39,7 @@ class DPaliDriver(Node):
             adjust = np.clip((angle-MIDDLE)*ADJUST_RATIO-5,-ADJUST_RANGE/2,ADJUST_RANGE/2)
             self.pinky_adjust = adjust
 
+
     def drive_angles(self):#
         coords = self.get_coords_index()
         msg = DPaliCoordPair()
@@ -50,6 +51,7 @@ class DPaliDriver(Node):
         if (coords):
             msg.left.x = coords[0]
             msg.left.y = coords[1]+self.pinky_adjust
+
 
         self.publisher_.publish(msg)
 
@@ -65,6 +67,7 @@ class DPaliDriver(Node):
 
             b_to_i[2]=b_to_i[2]*0.6# y scaling
             b_to_i[1]=(-b_to_i[1])*0.8 # x translation#
+
             return (b_to_i[1],b_to_i[2])
         except Exception as e:
             self.get_logger().warn(f'Could not transform: {e}')
@@ -79,7 +82,9 @@ class DPaliDriver(Node):
             b_to_i = b_to_i*1000 #meteres to millimeters
 
             b_to_i[2]=b_to_i[2]*0.6# y scaling
+
             b_to_i[1]=(-b_to_i[1])*0.8 # x translation#
+
             return (b_to_i[1],b_to_i[2])
         except Exception as e:
             self.get_logger().warn(f'Could not transform: {e}')
