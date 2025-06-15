@@ -19,6 +19,7 @@ from sensor_msgs.msg import JointState
 from geometry_msgs.msg import TransformStamped
 from tf2_msgs.msg import TFMessage
 from handy_ros2.utils import quaternion_from_euler
+from std_msgs.msg import Int16MultiArray
 import math
 import serial
 import time
@@ -29,15 +30,16 @@ SERIAL_PORT = "/dev/ttyACM0"
 BAUD_RATE = 115200  # Match the baud rate of your ESP32
 
 
-
+BYTE_SIZE = 1 + (3+10)*4 + 1
 
 
 class JointBridge(Node):
 
     def __init__(self):
         super().__init__('handy_bridge')
-        self.publisher_ = self.create_publisher(JointState, 'joint_states', 10)
+        self.publisher_ = self.create_publisher(JointState, 'joint_states', 1)
         self.tf_publisher = self.create_publisher(TFMessage, 'tf', 10)
+        self.subscriber_ = self.create_subscription(Int16MultiArray,'handy/feedback',self.setFeedback,1)
         timer_period = 0.01  # seconds
         self.timer = self.create_timer(timer_period, self.timer_callback)
         self.i = 0
@@ -50,13 +52,14 @@ class JointBridge(Node):
         joint_angle, q = self.get_angles()
         if joint_angle:
             msg = JointState()
-            msg.name = ['thumb_0','thumb_1','thumb_2', 'thumb_3', 'index_0', 'index_1','index_2']
+            msg.name = ['thumb_0','thumb_1','thumb_2', 'thumb_3', 'index_0', 'index_1','index_2','pinky_0','pinky_1','pinky_2']
             msg.header.stamp = self.get_clock().now().to_msg()
             msg.position = [math.radians(float(i)) for i in joint_angle] 
             msg.velocity = []
             msg.effort=[]
             self.publisher_.publish(msg)
 
+            #self.get_logger().info('Publishing: "%s"' % msg.position)
             msg = TransformStamped()
             msg.header.stamp = self.get_clock().now().to_msg()
             msg.header.frame_id = "map"
@@ -68,23 +71,23 @@ class JointBridge(Node):
             outMsg = TFMessage()
             outMsg.transforms = [msg]
             self.tf_publisher.publish(outMsg)
-            #self.get_logger().info('Publishing: "%s"' % msg.position)
+            
 
 
 
     def get_angles(self):
         angles = None
         quaternion = None
-        while self.ser.in_waiting >= 42:
+        while self.ser.in_waiting >= BYTE_SIZE:
             byte = self.ser.read(1)
             if byte == b'\xAA':
-                data = self.ser.read(40)
+                data = self.ser.read(BYTE_SIZE-2)
                 end = self.ser.read(1)
                 if end == b'\x55':
                     try:
-                        values = struct.unpack('10f', data)
-                        angles = values[:7]
-                        orientation = values[7:]
+                        values = struct.unpack('13f', data)
+                        angles = values[:10]
+                        orientation = values[-3:]
                         orientation = [math.radians(i) for i in orientation]
                         quaternion = quaternion_from_euler(orientation[1],-orientation[0],orientation[2])
                         angles = list(angles)
@@ -92,11 +95,18 @@ class JointBridge(Node):
                         angles[5] = -angles[5]
                         angles[2] = -angles[2]
                         angles[3] = -45.0
+                        angles[7] = -angles[7]
                     except struct.error:
                         pass
                 break
         self.ser.reset_input_buffer()
         return angles,quaternion
+    
+    def setFeedback(self,msg:Int16MultiArray):
+        finger = msg.data[0]
+        value = msg.data[1] 
+        self.ser.write(bytes(f'<{finger},{value}>'.encode()))
+        pass
 
 def main(args=None):
     rclpy.init(args=args)
