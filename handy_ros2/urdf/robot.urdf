@@ -17,6 +17,22 @@
       <mass value="1e-09"/>
       <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
     </inertial>
+    <!-- Part part_1__configuration_pinky -->
+    <visual>
+      <origin xyz="-0.0314727 -0.0267889 0.003" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/part_1__configuration_pinky.stl"/>
+      </geometry>
+      <material name="part_1__configuration_pinky_material">
+        <color rgba="0.231373 0.380392 0.705882 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0314727 -0.0267889 0.003" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/part_1__configuration_pinky.stl"/>
+      </geometry>
+    </collision>
     <!-- Part part_1 -->
     <visual>
       <origin xyz="0.0310273 0.0432111 0.006" rpy="0 -0 1.5708"/>
@@ -49,29 +65,29 @@
         <mesh filename="package://handy_ros2/urdf/assets/base.stl"/>
       </geometry>
     </collision>
-    <!-- Part part_1_2 -->
+    <!-- Part part_1__configuration_default -->
     <visual>
       <origin xyz="0.0285273 -0.0267889 0.003" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://handy_ros2/urdf/assets/part_1__2.stl"/>
+        <mesh filename="package://handy_ros2/urdf/assets/part_1__configuration_default.stl"/>
       </geometry>
-      <material name="part_1_2_material">
+      <material name="part_1__configuration_default_material">
         <color rgba="0.231373 0.380392 0.705882 1.0"/>
       </material>
     </visual>
     <collision>
       <origin xyz="0.0285273 -0.0267889 0.003" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://handy_ros2/urdf/assets/part_1__2.stl"/>
+        <mesh filename="package://handy_ros2/urdf/assets/part_1__configuration_default.stl"/>
       </geometry>
     </collision>
   </link>
-  <!-- Link encoder_link_assembly -->
-  <link name="encoder_link_assembly">
+  <!-- Link encoder_link_assembly__configuration_default -->
+  <link name="encoder_link_assembly__configuration_default">
     <inertial>
       <origin xyz="-0.0339637 -2.62226e-18 0.000778722" rpy="0 0 0"/>
       <mass value="0.000597845"/>
-      <inertia ixx="7.54499e-09" ixy="-3.99966e-23" ixz="-4.80745e-09" iyy="3.46785e-07" iyz="-3.29993e-24" izz="3.41347e-07"/>
+      <inertia ixx="7.54499e-09" ixy="-4.0003e-23" ixz="-4.80745e-09" iyy="3.46785e-07" iyz="-3.29993e-24" izz="3.41347e-07"/>
     </inertial>
     <!-- Part socket_button_head_screw_m2x0_4_x_6__26a03d688f50a4abcad31a07665ed233 -->
     <visual>
@@ -105,20 +121,20 @@
         <mesh filename="package://handy_ros2/urdf/assets/m2x2_5_insert.stl"/>
       </geometry>
     </collision>
-    <!-- Part encoder_link -->
+    <!-- Part encoder_link__configuration_default -->
     <visual>
       <origin xyz="-0.03 6.93889e-18 -0.0018" rpy="3.14159 -1.51929e-64 0"/>
       <geometry>
-        <mesh filename="package://handy_ros2/urdf/assets/encoder_link.stl"/>
+        <mesh filename="package://handy_ros2/urdf/assets/encoder_link__configuration_default.stl"/>
       </geometry>
-      <material name="encoder_link_material">
+      <material name="encoder_link__configuration_default_material">
         <color rgba="0.231373 0.380392 0.705882 1.0"/>
       </material>
     </visual>
     <collision>
       <origin xyz="-0.03 6.93889e-18 -0.0018" rpy="3.14159 -1.51929e-64 0"/>
       <geometry>
-        <mesh filename="package://handy_ros2/urdf/assets/encoder_link.stl"/>
+        <mesh filename="package://handy_ros2/urdf/assets/encoder_link__configuration_default.stl"/>
       </geometry>
     </collision>
     <!-- Part 57155k526_stainless_steel_ball_bearing -->
@@ -665,20 +681,20 @@
       <mass value="1e-09"/>
       <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
     </inertial>
-    <!-- Part part_1_3 -->
+    <!-- Part part_1_2 -->
     <visual>
       <origin xyz="-0.0207217 -0.005 7.5e-05" rpy="-1.5708 -0 0"/>
       <geometry>
-        <mesh filename="package://handy_ros2/urdf/assets/part_1__3.stl"/>
+        <mesh filename="package://handy_ros2/urdf/assets/part_1__2.stl"/>
       </geometry>
-      <material name="part_1_3_material">
+      <material name="part_1_2_material">
         <color rgba="0.231373 0.380392 0.705882 1.0"/>
       </material>
     </visual>
     <collision>
       <origin xyz="-0.0207217 -0.005 7.5e-05" rpy="-1.5708 -0 0"/>
       <geometry>
-        <mesh filename="package://handy_ros2/urdf/assets/part_1__3.stl"/>
+        <mesh filename="package://handy_ros2/urdf/assets/part_1__2.stl"/>
       </geometry>
     </collision>
   </link>
@@ -705,19 +721,19 @@
     <axis xyz="0 0 1"/>
     <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
   </joint>
-  <!-- Joint from encoder_link_assembly to passive_link_assembly__configuration_default -->
+  <!-- Joint from encoder_link_assembly__configuration_default to passive_link_assembly__configuration_default -->
   <joint name="index_1" type="revolute">
     <origin xyz="-0.06 -1.38778e-17 0" rpy="3.14159 1.10559e-47 0"/>
-    <parent link="encoder_link_assembly"/>
+    <parent link="encoder_link_assembly__configuration_default"/>
     <child link="passive_link_assembly__configuration_default"/>
     <axis xyz="0 0 1"/>
     <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
   </joint>
-  <!-- Joint from base to encoder_link_assembly -->
+  <!-- Joint from base to encoder_link_assembly__configuration_default -->
   <joint name="index_0" type="revolute">
     <origin xyz="0.0259773 -0.0367889 0.0136569" rpy="1.5708 0.785398 1.5708"/>
     <parent link="base"/>
-    <child link="encoder_link_assembly"/>
+    <child link="encoder_link_assembly__configuration_default"/>
     <axis xyz="0 0 1"/>
     <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
   </joint>
@@ -745,12 +761,12 @@
       </geometry>
     </collision>
   </link>
-  <!-- Link encoder_link_assembly_2 -->
-  <link name="encoder_link_assembly_2">
+  <!-- Link encoder_link_assembly__configuration_default_2 -->
+  <link name="encoder_link_assembly__configuration_default_2">
     <inertial>
       <origin xyz="0.0260363 8.19879e-20 0.000778722" rpy="0 0 0"/>
       <mass value="0.000597845"/>
-      <inertia ixx="7.54499e-09" ixy="2.40574e-24" ixz="-4.80745e-09" iyy="3.46785e-07" iyz="2.10623e-25" izz="3.41347e-07"/>
+      <inertia ixx="7.54499e-09" ixy="2.40574e-24" ixz="-4.80745e-09" iyy="3.46785e-07" iyz="2.09008e-25" izz="3.41347e-07"/>
     </inertial>
     <!-- Part socket_button_head_screw_m2x0_4_x_6__26a03d688f50a4abcad31a07665ed233_2 -->
     <visual>
@@ -784,20 +800,20 @@
         <mesh filename="package://handy_ros2/urdf/assets/m2x2_5_insert.stl"/>
       </geometry>
     </collision>
-    <!-- Part encoder_link_2 -->
+    <!-- Part encoder_link__configuration_default_2 -->
     <visual>
       <origin xyz="0.03 0 -0.0018" rpy="3.14159 -5.55112e-17 0"/>
       <geometry>
-        <mesh filename="package://handy_ros2/urdf/assets/encoder_link.stl"/>
+        <mesh filename="package://handy_ros2/urdf/assets/encoder_link__configuration_default.stl"/>
       </geometry>
-      <material name="encoder_link_2_material">
+      <material name="encoder_link__configuration_default_2_material">
         <color rgba="0.231373 0.380392 0.705882 1.0"/>
       </material>
     </visual>
     <collision>
       <origin xyz="0.03 0 -0.0018" rpy="3.14159 -5.55112e-17 0"/>
       <geometry>
-        <mesh filename="package://handy_ros2/urdf/assets/encoder_link.stl"/>
+        <mesh filename="package://handy_ros2/urdf/assets/encoder_link__configuration_default.stl"/>
       </geometry>
     </collision>
     <!-- Part 57155k526_stainless_steel_ball_bearing_15 -->
@@ -1344,20 +1360,20 @@
       <mass value="1e-09"/>
       <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
     </inertial>
-    <!-- Part part_1_4 -->
+    <!-- Part part_1_3 -->
     <visual>
       <origin xyz="-0.0207217 -0.005 7.5e-05" rpy="-1.5708 -5.55112e-17 3.15544e-30"/>
       <geometry>
-        <mesh filename="package://handy_ros2/urdf/assets/part_1__3.stl"/>
+        <mesh filename="package://handy_ros2/urdf/assets/part_1__2.stl"/>
       </geometry>
-      <material name="part_1_4_material">
+      <material name="part_1_3_material">
         <color rgba="0.231373 0.380392 0.705882 1.0"/>
       </material>
     </visual>
     <collision>
       <origin xyz="-0.0207217 -0.005 7.5e-05" rpy="-1.5708 -5.55112e-17 3.15544e-30"/>
       <geometry>
-        <mesh filename="package://handy_ros2/urdf/assets/part_1__3.stl"/>
+        <mesh filename="package://handy_ros2/urdf/assets/part_1__2.stl"/>
       </geometry>
     </collision>
   </link>
@@ -1384,19 +1400,19 @@
     <axis xyz="0 0 1"/>
     <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
   </joint>
-  <!-- Joint from encoder_link_assembly_2 to passive_link_assembly__configuration_thumb -->
+  <!-- Joint from encoder_link_assembly__configuration_default_2 to passive_link_assembly__configuration_thumb -->
   <joint name="thumb_1" type="revolute">
     <origin xyz="0.06 0 8.67362e-19" rpy="-3.14159 2.22045e-16 3.14159"/>
-    <parent link="encoder_link_assembly_2"/>
+    <parent link="encoder_link_assembly__configuration_default_2"/>
     <child link="passive_link_assembly__configuration_thumb"/>
     <axis xyz="0 0 1"/>
     <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
   </joint>
-  <!-- Joint from part_2 to encoder_link_assembly_2 -->
+  <!-- Joint from part_2 to encoder_link_assembly__configuration_default_2 -->
   <joint name="thumb_0" type="revolute">
     <origin xyz="0 0.012 -0.00866025" rpy="3.14159 1.0472 1.5708"/>
     <parent link="part_2"/>
-    <child link="encoder_link_assembly_2"/>
+    <child link="encoder_link_assembly__configuration_default_2"/>
     <axis xyz="0 0 1"/>
     <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
   </joint>
@@ -1405,6 +1421,661 @@
     <origin xyz="0.0335773 0.0457111 -0.007" rpy="-1.5708 -0 1.5708"/>
     <parent link="base"/>
     <child link="part_2"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
+  </joint>
+  <!-- Link encoder_link_assembly__configuration_default_3 -->
+  <link name="encoder_link_assembly__configuration_default_3">
+    <inertial>
+      <origin xyz="-0.0339637 4.49538e-18 0.000927472" rpy="0 0 0"/>
+      <mass value="0.000597845"/>
+      <inertia ixx="7.54499e-09" ixy="8.0962e-23" ixz="-4.80745e-09" iyy="3.46785e-07" iyz="1.22113e-24" izz="3.41347e-07"/>
+    </inertial>
+    <!-- Part socket_button_head_screw_m2x0_4_x_6__26a03d688f50a4abcad31a07665ed233_3 -->
+    <visual>
+      <origin xyz="-0.03 3.46945e-18 0.00820875" rpy="-3.3331e-17 -3.28429e-47 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/socket_button_head_screw_m2x0_4_x_6__26a03d688f50a4abcad31a07665ed233.stl"/>
+      </geometry>
+      <material name="socket_button_head_screw_m2x0_4_x_6__26a03d688f50a4abcad31a07665ed233_3_material">
+        <color rgba="0.603922 0.647059 0.686275 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.03 3.46945e-18 0.00820875" rpy="-3.3331e-17 -3.28429e-47 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/socket_button_head_screw_m2x0_4_x_6__26a03d688f50a4abcad31a07665ed233.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part m2x2_5_insert_7 -->
+    <visual>
+      <origin xyz="-0.03 1.73472e-17 0.00284875" rpy="-3.3331e-17 -3.28429e-47 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/m2x2_5_insert.stl"/>
+      </geometry>
+      <material name="m2x2_5_insert_7_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.03 1.73472e-17 0.00284875" rpy="-3.3331e-17 -3.28429e-47 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/m2x2_5_insert.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part encoder_link__configuration_default_3 -->
+    <visual>
+      <origin xyz="-0.03 1.38778e-17 -0.00165125" rpy="3.14159 -3.28429e-47 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/encoder_link__configuration_default.stl"/>
+      </geometry>
+      <material name="encoder_link__configuration_default_3_material">
+        <color rgba="0.231373 0.380392 0.705882 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.03 1.38778e-17 -0.00165125" rpy="3.14159 -3.28429e-47 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/encoder_link__configuration_default.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part 57155k526_stainless_steel_ball_bearing_29 -->
+    <visual>
+      <origin xyz="-0.06 1.04083e-17 -0.00110125" rpy="-1.44353e-16 -3.28429e-47 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/57155k526_stainless_steel_ball_bearing.stl"/>
+      </geometry>
+      <material name="57155k526_stainless_steel_ball_bearing_29_material">
+        <color rgba="0.901961 0.901961 0.901961 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.06 1.04083e-17 -0.00110125" rpy="-1.44353e-16 -3.28429e-47 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/57155k526_stainless_steel_ball_bearing.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part 57155k526_stainless_steel_ball_bearing_30 -->
+    <visual>
+      <origin xyz="-0.06 1.04083e-17 -0.00110125" rpy="-1.44353e-16 -3.28429e-47 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/57155k526_stainless_steel_ball_bearing__2.stl"/>
+      </geometry>
+      <material name="57155k526_stainless_steel_ball_bearing_30_material">
+        <color rgba="0.901961 0.901961 0.901961 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.06 1.04083e-17 -0.00110125" rpy="-1.44353e-16 -3.28429e-47 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/57155k526_stainless_steel_ball_bearing__2.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part 57155k526_stainless_steel_ball_bearing_31 -->
+    <visual>
+      <origin xyz="-0.06 1.04083e-17 -0.00110125" rpy="-1.44353e-16 -3.28429e-47 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/57155k526_stainless_steel_ball_bearing__3.stl"/>
+      </geometry>
+      <material name="57155k526_stainless_steel_ball_bearing_31_material">
+        <color rgba="0.901961 0.901961 0.901961 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.06 1.04083e-17 -0.00110125" rpy="-1.44353e-16 -3.28429e-47 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/57155k526_stainless_steel_ball_bearing__3.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part 57155k526_stainless_steel_ball_bearing_32 -->
+    <visual>
+      <origin xyz="-0.06 1.04083e-17 -0.00110125" rpy="-1.44353e-16 -3.28429e-47 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/57155k526_stainless_steel_ball_bearing__4.stl"/>
+      </geometry>
+      <material name="57155k526_stainless_steel_ball_bearing_32_material">
+        <color rgba="0.901961 0.901961 0.901961 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.06 1.04083e-17 -0.00110125" rpy="-1.44353e-16 -3.28429e-47 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/57155k526_stainless_steel_ball_bearing__4.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part 57155k526_stainless_steel_ball_bearing_33 -->
+    <visual>
+      <origin xyz="-0.06 1.04083e-17 -0.00110125" rpy="-1.44353e-16 -3.28429e-47 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/57155k526_stainless_steel_ball_bearing__5.stl"/>
+      </geometry>
+      <material name="57155k526_stainless_steel_ball_bearing_33_material">
+        <color rgba="0.901961 0.901961 0.901961 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.06 1.04083e-17 -0.00110125" rpy="-1.44353e-16 -3.28429e-47 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/57155k526_stainless_steel_ball_bearing__5.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part 57155k526_stainless_steel_ball_bearing_34 -->
+    <visual>
+      <origin xyz="-0.06 1.04083e-17 -0.00110125" rpy="-1.44353e-16 -3.28429e-47 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/57155k526_stainless_steel_ball_bearing__6.stl"/>
+      </geometry>
+      <material name="57155k526_stainless_steel_ball_bearing_34_material">
+        <color rgba="0.901961 0.901961 0.901961 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.06 1.04083e-17 -0.00110125" rpy="-1.44353e-16 -3.28429e-47 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/57155k526_stainless_steel_ball_bearing__6.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part 57155k526_stainless_steel_ball_bearing_35 -->
+    <visual>
+      <origin xyz="-0.06 1.04083e-17 -0.00110125" rpy="-1.44353e-16 -3.28429e-47 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/57155k526_stainless_steel_ball_bearing__7.stl"/>
+      </geometry>
+      <material name="57155k526_stainless_steel_ball_bearing_35_material">
+        <color rgba="0.901961 0.901961 0.901961 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.06 1.04083e-17 -0.00110125" rpy="-1.44353e-16 -3.28429e-47 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/57155k526_stainless_steel_ball_bearing__7.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part 57155k526_stainless_steel_ball_bearing_36 -->
+    <visual>
+      <origin xyz="-0.06 1.04083e-17 -0.00110125" rpy="-1.44353e-16 -3.28429e-47 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/57155k526_stainless_steel_ball_bearing__8.stl"/>
+      </geometry>
+      <material name="57155k526_stainless_steel_ball_bearing_36_material">
+        <color rgba="0.901961 0.901961 0.901961 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.06 1.04083e-17 -0.00110125" rpy="-1.44353e-16 -3.28429e-47 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/57155k526_stainless_steel_ball_bearing__8.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part 57155k526_stainless_steel_ball_bearing_37 -->
+    <visual>
+      <origin xyz="-0.06 1.04083e-17 -0.00110125" rpy="-1.44353e-16 -3.28429e-47 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/57155k526_stainless_steel_ball_bearing__9.stl"/>
+      </geometry>
+      <material name="57155k526_stainless_steel_ball_bearing_37_material">
+        <color rgba="0.901961 0.901961 0.901961 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.06 1.04083e-17 -0.00110125" rpy="-1.44353e-16 -3.28429e-47 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/57155k526_stainless_steel_ball_bearing__9.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part 57155k526_stainless_steel_ball_bearing_38 -->
+    <visual>
+      <origin xyz="-0.06 1.04083e-17 -0.00110125" rpy="-1.44353e-16 -3.28429e-47 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/57155k526_stainless_steel_ball_bearing__10.stl"/>
+      </geometry>
+      <material name="57155k526_stainless_steel_ball_bearing_38_material">
+        <color rgba="0.901961 0.901961 0.901961 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.06 1.04083e-17 -0.00110125" rpy="-1.44353e-16 -3.28429e-47 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/57155k526_stainless_steel_ball_bearing__10.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part 57155k526_stainless_steel_ball_bearing_39 -->
+    <visual>
+      <origin xyz="-0.06 1.04083e-17 -0.00110125" rpy="-1.44353e-16 -3.28429e-47 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/57155k526_stainless_steel_ball_bearing__11.stl"/>
+      </geometry>
+      <material name="57155k526_stainless_steel_ball_bearing_39_material">
+        <color rgba="0.901961 0.901961 0.901961 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.06 1.04083e-17 -0.00110125" rpy="-1.44353e-16 -3.28429e-47 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/57155k526_stainless_steel_ball_bearing__11.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part 57155k526_stainless_steel_ball_bearing_40 -->
+    <visual>
+      <origin xyz="-0.06 1.04083e-17 -0.00110125" rpy="-1.44353e-16 -3.28429e-47 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/57155k526_stainless_steel_ball_bearing__12.stl"/>
+      </geometry>
+      <material name="57155k526_stainless_steel_ball_bearing_40_material">
+        <color rgba="0.901961 0.901961 0.901961 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.06 1.04083e-17 -0.00110125" rpy="-1.44353e-16 -3.28429e-47 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/57155k526_stainless_steel_ball_bearing__12.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part 57155k526_stainless_steel_ball_bearing_41 -->
+    <visual>
+      <origin xyz="-0.06 1.04083e-17 -0.00110125" rpy="-1.44353e-16 -3.28429e-47 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/57155k526_stainless_steel_ball_bearing__13.stl"/>
+      </geometry>
+      <material name="57155k526_stainless_steel_ball_bearing_41_material">
+        <color rgba="0.901961 0.901961 0.901961 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.06 1.04083e-17 -0.00110125" rpy="-1.44353e-16 -3.28429e-47 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/57155k526_stainless_steel_ball_bearing__13.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part 57155k526_stainless_steel_ball_bearing_42 -->
+    <visual>
+      <origin xyz="-6.93889e-18 -3.46945e-18 -0.00110125" rpy="-1.44353e-16 -3.28429e-47 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/57155k526_stainless_steel_ball_bearing__7.stl"/>
+      </geometry>
+      <material name="57155k526_stainless_steel_ball_bearing_42_material">
+        <color rgba="0.901961 0.901961 0.901961 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-6.93889e-18 -3.46945e-18 -0.00110125" rpy="-1.44353e-16 -3.28429e-47 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/57155k526_stainless_steel_ball_bearing__7.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part texas_rge0024c_vqfn_24_1ep_4x4mm_p0_5mm_ep2_1x2_1mm_3 -->
+    <visual>
+      <origin xyz="-0.1795 0.1 0.00534875" rpy="-1.5708 -3.28429e-47 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/texas_rge0024c_vqfn_24_1ep_4x4mm_p0_5mm_ep2_1x2_1mm.stl"/>
+      </geometry>
+      <material name="texas_rge0024c_vqfn_24_1ep_4x4mm_p0_5mm_ep2_1x2_1mm_3_material">
+        <color rgba="0.823529 0.819608 0.780392 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.1795 0.1 0.00534875" rpy="-1.5708 -3.28429e-47 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/texas_rge0024c_vqfn_24_1ep_4x4mm_p0_5mm_ep2_1x2_1mm.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part r_0201_0603metric_7_3 -->
+    <visual>
+      <origin xyz="-0.1795 0.1 0.00534875" rpy="-1.5708 -3.28429e-47 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/r_0201_0603metric_7.stl"/>
+      </geometry>
+      <material name="r_0201_0603metric_7_3_material">
+        <color rgba="0.823529 0.819608 0.780392 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.1795 0.1 0.00534875" rpy="-1.5708 -3.28429e-47 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/r_0201_0603metric_7.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part r_0201_0603metric_1_3 -->
+    <visual>
+      <origin xyz="-0.1795 0.1 0.00534875" rpy="-1.5708 -3.28429e-47 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/r_0201_0603metric_1.stl"/>
+      </geometry>
+      <material name="r_0201_0603metric_1_3_material">
+        <color rgba="0.823529 0.819608 0.780392 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.1795 0.1 0.00534875" rpy="-1.5708 -3.28429e-47 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/r_0201_0603metric_1.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part r_0201_0603metric_9_3 -->
+    <visual>
+      <origin xyz="-0.1795 0.1 0.00534875" rpy="-1.5708 -3.28429e-47 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/r_0201_0603metric_9.stl"/>
+      </geometry>
+      <material name="r_0201_0603metric_9_3_material">
+        <color rgba="0.823529 0.819608 0.780392 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.1795 0.1 0.00534875" rpy="-1.5708 -3.28429e-47 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/r_0201_0603metric_9.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part r_0201_0603metric_5_3 -->
+    <visual>
+      <origin xyz="-0.1795 0.1 0.00534875" rpy="-1.5708 -3.28429e-47 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/r_0201_0603metric_5.stl"/>
+      </geometry>
+      <material name="r_0201_0603metric_5_3_material">
+        <color rgba="0.823529 0.819608 0.780392 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.1795 0.1 0.00534875" rpy="-1.5708 -3.28429e-47 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/r_0201_0603metric_5.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part r_0201_0603metric_3 -->
+    <visual>
+      <origin xyz="-0.1795 0.1 0.00534875" rpy="-1.5708 -3.28429e-47 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/r_0201_0603metric.stl"/>
+      </geometry>
+      <material name="r_0201_0603metric_3_material">
+        <color rgba="0.823529 0.819608 0.780392 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.1795 0.1 0.00534875" rpy="-1.5708 -3.28429e-47 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/r_0201_0603metric.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part r_0201_0603metric_8_3 -->
+    <visual>
+      <origin xyz="-0.1795 0.1 0.00534875" rpy="-1.5708 -3.28429e-47 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/r_0201_0603metric_8.stl"/>
+      </geometry>
+      <material name="r_0201_0603metric_8_3_material">
+        <color rgba="0.823529 0.819608 0.780392 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.1795 0.1 0.00534875" rpy="-1.5708 -3.28429e-47 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/r_0201_0603metric_8.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part r_0201_0603metric_2_3 -->
+    <visual>
+      <origin xyz="-0.1795 0.1 0.00534875" rpy="-1.5708 -3.28429e-47 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/r_0201_0603metric_2.stl"/>
+      </geometry>
+      <material name="r_0201_0603metric_2_3_material">
+        <color rgba="0.823529 0.819608 0.780392 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.1795 0.1 0.00534875" rpy="-1.5708 -3.28429e-47 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/r_0201_0603metric_2.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part handy_pcb_3 -->
+    <visual>
+      <origin xyz="-0.1795 0.1 0.00534875" rpy="-1.5708 -3.28429e-47 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/handy_pcb.stl"/>
+      </geometry>
+      <material name="handy_pcb_3_material">
+        <color rgba="0.313725 0.486275 0.411765 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.1795 0.1 0.00534875" rpy="-1.5708 -3.28429e-47 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/handy_pcb.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part r_0201_0603metric_3_3 -->
+    <visual>
+      <origin xyz="-0.1795 0.1 0.00534875" rpy="-1.5708 -3.28429e-47 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/r_0201_0603metric_3.stl"/>
+      </geometry>
+      <material name="r_0201_0603metric_3_3_material">
+        <color rgba="0.823529 0.819608 0.780392 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.1795 0.1 0.00534875" rpy="-1.5708 -3.28429e-47 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/r_0201_0603metric_3.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part c_0201_0603metric_1_3 -->
+    <visual>
+      <origin xyz="-0.1795 0.1 0.00534875" rpy="-1.5708 -3.28429e-47 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/c_0201_0603metric_1.stl"/>
+      </geometry>
+      <material name="c_0201_0603metric_1_3_material">
+        <color rgba="0.823529 0.819608 0.780392 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.1795 0.1 0.00534875" rpy="-1.5708 -3.28429e-47 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/c_0201_0603metric_1.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part r_0201_0603metric_6_3 -->
+    <visual>
+      <origin xyz="-0.1795 0.1 0.00534875" rpy="-1.5708 -3.28429e-47 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/r_0201_0603metric_6.stl"/>
+      </geometry>
+      <material name="r_0201_0603metric_6_3_material">
+        <color rgba="0.823529 0.819608 0.780392 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.1795 0.1 0.00534875" rpy="-1.5708 -3.28429e-47 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/r_0201_0603metric_6.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part r_0201_0603metric_4_3 -->
+    <visual>
+      <origin xyz="-0.1795 0.1 0.00534875" rpy="-1.5708 -3.28429e-47 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/r_0201_0603metric_4.stl"/>
+      </geometry>
+      <material name="r_0201_0603metric_4_3_material">
+        <color rgba="0.823529 0.819608 0.780392 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.1795 0.1 0.00534875" rpy="-1.5708 -3.28429e-47 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/r_0201_0603metric_4.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part c_0201_0603metric_3 -->
+    <visual>
+      <origin xyz="-0.1795 0.1 0.00534875" rpy="-1.5708 -3.28429e-47 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/c_0201_0603metric.stl"/>
+      </geometry>
+      <material name="c_0201_0603metric_3_material">
+        <color rgba="0.823529 0.819608 0.780392 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.1795 0.1 0.00534875" rpy="-1.5708 -3.28429e-47 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/c_0201_0603metric.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link passive_link_assembly__configuration_pinky -->
+  <link name="passive_link_assembly__configuration_pinky">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-09"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+    <!-- Part m2x2_5_insert_8 -->
+    <visual>
+      <origin xyz="-1.38778e-17 3.46945e-18 0" rpy="-3.14159 1.2326e-32 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/m2x2_5_insert.stl"/>
+      </geometry>
+      <material name="m2x2_5_insert_8_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-1.38778e-17 3.46945e-18 0" rpy="-3.14159 1.2326e-32 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/m2x2_5_insert.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part magnet__configuration_pinky -->
+    <visual>
+      <origin xyz="-0.015 -1.04083e-17 -0.0039" rpy="-3.14159 1.2326e-32 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/magnet__configuration_pinky.stl"/>
+      </geometry>
+      <material name="magnet__configuration_pinky_material">
+        <color rgba="0.647059 0.647059 0.647059 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.015 -1.04083e-17 -0.0039" rpy="-3.14159 1.2326e-32 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/magnet__configuration_pinky.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part passive_link__configuration_pinky -->
+    <visual>
+      <origin xyz="-0.015 1.04083e-17 -0.00505" rpy="6.16298e-33 1.2326e-32 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/passive_link__configuration_pinky.stl"/>
+      </geometry>
+      <material name="passive_link__configuration_pinky_material">
+        <color rgba="0.231373 0.380392 0.705882 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.015 1.04083e-17 -0.00505" rpy="6.16298e-33 1.2326e-32 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/passive_link__configuration_pinky.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part magnet__configuration_pinky_2 -->
+    <visual>
+      <origin xyz="0.015 1.04083e-17 -0.0039" rpy="-3.14159 1.2326e-32 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/magnet__configuration_pinky.stl"/>
+      </geometry>
+      <material name="magnet__configuration_pinky_2_material">
+        <color rgba="0.647059 0.647059 0.647059 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.015 1.04083e-17 -0.0039" rpy="-3.14159 1.2326e-32 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/magnet__configuration_pinky.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part m2x2_5_insert_9 -->
+    <visual>
+      <origin xyz="-0.03 -1.04083e-17 1.04083e-17" rpy="-3.14159 1.2326e-32 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/m2x2_5_insert.stl"/>
+      </geometry>
+      <material name="m2x2_5_insert_9_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.03 -1.04083e-17 1.04083e-17" rpy="-3.14159 1.2326e-32 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/m2x2_5_insert.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link part_1_3 -->
+  <link name="part_1_3">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-09"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+    <!-- Part part_1_4 -->
+    <visual>
+      <origin xyz="-0.0207217 -0.005 7.5e-05" rpy="-1.5708 6.16298e-33 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/part_1__2.stl"/>
+      </geometry>
+      <material name="part_1_4_material">
+        <color rgba="0.231373 0.380392 0.705882 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0207217 -0.005 7.5e-05" rpy="-1.5708 6.16298e-33 0"/>
+      <geometry>
+        <mesh filename="package://handy_ros2/urdf/assets/part_1__2.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Frame pinky_tip (dummy link + fixed joint) -->
+  <link name="pinky_tip">
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-9"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+  </link>
+  <joint name="pinky_tip_frame" type="fixed">
+    <origin xyz="-0.0207217 0.02 7.5e-05" rpy="-1.5708 6.16298e-33 0"/>
+    <parent link="part_1_3"/>
+    <child link="pinky_tip"/>
+    <axis xyz="0 0 0"/>
+  </joint>
+  <!-- Joint from passive_link_assembly__configuration_pinky to part_1_3 -->
+  <joint name="pinky_2" type="revolute">
+    <origin xyz="-0.03 3.1225e-17 1.04083e-17" rpy="-5.55112e-17 5.55112e-17 6.66134e-16"/>
+    <parent link="passive_link_assembly__configuration_pinky"/>
+    <child link="part_1_3"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
+  </joint>
+  <!-- Joint from encoder_link_assembly__configuration_default_3 to passive_link_assembly__configuration_pinky -->
+  <joint name="pinky_1" type="revolute">
+    <origin xyz="-0.06 1.04083e-17 4.875e-05" rpy="-3.14159 -5.55112e-17 6.66134e-16"/>
+    <parent link="encoder_link_assembly__configuration_default_3"/>
+    <child link="passive_link_assembly__configuration_pinky"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
+  </joint>
+  <!-- Joint from base to encoder_link_assembly__configuration_default_3 -->
+  <joint name="pinky_0" type="revolute">
+    <origin xyz="-0.0289227 -0.0367889 0.0136569" rpy="-1.5708 0.785398 1.5708"/>
+    <parent link="base"/>
+    <child link="encoder_link_assembly__configuration_default_3"/>
     <axis xyz="0 0 1"/>
     <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
   </joint>

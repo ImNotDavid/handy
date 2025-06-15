@@ -5,7 +5,13 @@ from rclpy.node import Node
 from tf2_ros import Buffer, TransformListener, TransformBroadcaster
 from geometry_msgs.msg import Vector3, TransformStamped
 from std_msgs.msg import Header
+from sensor_msgs.msg import JointState
 
+PINKY_START = -1.08
+PINKY_END = -1.90
+MIDDLE = (PINKY_START+PINKY_END)/2
+ADJUST_RANGE = 45
+ADJUST_RATIO = ADJUST_RANGE/(PINKY_START-PINKY_END)
 
 def vec3ToNp(vector:Vector3)->np.array:
     x = vector.x
@@ -21,16 +27,31 @@ class DPaliDriver(Node):
         self.tf_listener = TransformListener(self.tf_buffer, self)
         self.timer = self.create_timer(0.01, self.drive_angles)
         self.publisher_ = self.create_publisher(DPaliCoordPair,"/dpali/set_coords",1)
+        self.joint_subscriber = self.create_subscription(JointState, "joint_states", self.joint_callback,1)
+        self.pinky_adjust = 0
+
+    def joint_callback(self,msg:JointState):
+        joints = msg.name
+        pos = msg.position
+        if "pinky_0" in msg.name:
+            index = joints.index("pinky_0")
+            angle = pos[index]
+            adjust = np.clip((angle-MIDDLE)*ADJUST_RATIO-5,-ADJUST_RANGE/2,ADJUST_RANGE/2)
+            self.pinky_adjust = adjust
+
 
     def drive_angles(self):#
         coords = self.get_coords_index()
         msg = DPaliCoordPair()
-        msg.header.stamp = self.get_clock().now().to_msg()
-        msg.right.x = coords[0]
-        msg.right.y = coords[1]
+        if(coords):
+            msg.header.stamp = self.get_clock().now().to_msg()
+            msg.right.x = coords[0]
+            msg.right.y = coords[1]+self.pinky_adjust
         coords = self.get_coords_thumb()
-        msg.left.x = coords[0]
-        msg.left.y = coords[1]
+        if (coords):
+            msg.left.x = coords[0]
+            msg.left.y = coords[1]+self.pinky_adjust
+
 
         self.publisher_.publish(msg)
 
@@ -45,7 +66,8 @@ class DPaliDriver(Node):
             b_to_i = b_to_i*1000 #meteres to millimeters
 
             b_to_i[2]=b_to_i[2]*0.6# y scaling
-            b_to_i[1]=(-b_to_i[1])*0.6 # x translation#
+            b_to_i[1]=(-b_to_i[1])*0.8 # x translation#
+
             return (b_to_i[1],b_to_i[2])
         except Exception as e:
             self.get_logger().warn(f'Could not transform: {e}')
@@ -60,7 +82,9 @@ class DPaliDriver(Node):
             b_to_i = b_to_i*1000 #meteres to millimeters
 
             b_to_i[2]=b_to_i[2]*0.6# y scaling
-            b_to_i[1]=(-b_to_i[1])*0.6 # x translation#
+
+            b_to_i[1]=(-b_to_i[1])*0.8 # x translation#
+
             return (b_to_i[1],b_to_i[2])
         except Exception as e:
             self.get_logger().warn(f'Could not transform: {e}')
