@@ -4,6 +4,15 @@ import numpy as np
 import random
 import csv
 import time
+import asyncio
+import websockets
+import threading
+import json
+
+websocket_clients = set()
+websocket_data = None
+websocket_lock = threading.Lock()
+
 
 TRIAL_TYPE = "orientation_david_large"
 TRIAL_NO = 19
@@ -121,23 +130,49 @@ start = time.time()
 origin, ratio = calibrate(0, 30)
 rand_coord = origin + [int(-80 / ratio), 0]
 orientation_target = 0
-with open(f"{path}/data_{TRIAL_NO}.csv", "w", newline="") as csvfile:
-    spamwriter = csv.writer(
-        csvfile, delimiter=",", quotechar="|", quoting=csv.QUOTE_MINIMAL
-    )
-    spamwriter.writerow(
-        [
-            "Timestamp",
-            "Block_x",
-            "Block_y",
-            "Block_orientation",
-            "Target_x",
-            "Target_y",
-            "Target_orientation",
-        ]
-    )
-    while True:
 
+async def websocket_handler(websocket):
+    websocket_clients.add(websocket)
+    try:
+        while True:
+            await asyncio.sleep(0.1)
+            with websocket_lock:
+                if websocket_data:
+                    await websocket.send(websocket_data)
+    except websockets.exceptions.ConnectionClosed:
+        pass
+    finally:
+        websocket_clients.remove(websocket)
+
+def start_websocket_server():
+    async def server_main():
+        async with websockets.serve(websocket_handler, "0.0.0.0", 8765):
+            print("WebSocket server started on ws://0.0.0.0:8765")
+            await asyncio.Future()  # Run forever
+
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
+    loop.run_until_complete(server_main())
+
+threading.Thread(target=start_websocket_server, daemon=True).start()
+
+
+with open(f"{path}/data_{TRIAL_NO}.csv", "w", newline="") as csvfile:
+    spamwriter = csv.writer(csvfile,
+                            delimiter=",",
+                            quotechar="|",
+                            quoting=csv.QUOTE_MINIMAL)
+    spamwriter.writerow([
+        "Timestamp",
+        "Block_x",
+        "Block_y",
+        "Block_orientation",
+        "Target_x",
+        "Target_y",
+        "Target_orientation",
+    ])
+
+    while True:
         ret, frame = cap.read()
         if not ret:
             break
@@ -146,9 +181,9 @@ with open(f"{path}/data_{TRIAL_NO}.csv", "w", newline="") as csvfile:
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
         # Detect ArUco markers
-        corners, ids, rejected = aruco.detectMarkers(
-            gray, aruco_dict, parameters=parameters
-        )
+        corners, ids, rejected = aruco.detectMarkers(gray,
+                                                     aruco_dict,
+                                                     parameters=parameters)
 
         # Draw detected markers
 
@@ -169,7 +204,8 @@ with open(f"{path}/data_{TRIAL_NO}.csv", "w", newline="") as csvfile:
             # <--- Draw Orientation Arrow on Target --->
             angle, orientation_point = get_square_orientation(corner)
             if mode == "orientation":
-                cv2.line(frame, center, orientation_point + center, (0, 255, 0), 2)
+                cv2.line(frame, center, orientation_point + center,
+                         (0, 255, 0), 2)
 
             cv2.drawMarker(
                 frame,
@@ -197,9 +233,9 @@ with open(f"{path}/data_{TRIAL_NO}.csv", "w", newline="") as csvfile:
 
         if mode == "orientation":
             target_orientation_point = generate_orientation_line(
-                center, orientation_target
-            )
-            cv2.line(frame, center, target_orientation_point, (108, 255, 255), 2)
+                center, orientation_target)
+            cv2.line(frame, center, target_orientation_point, (108, 255, 255),
+                     2)
 
         cv2.drawMarker(
             frame,
@@ -215,17 +251,32 @@ with open(f"{path}/data_{TRIAL_NO}.csv", "w", newline="") as csvfile:
         # Exit on pressing 'q'
         scaled_center = (center - origin) * ratio
         scaled_target = (rand_coord - origin) * ratio
-        spamwriter.writerow(
-            [
+        spamwriter.writerow([
+            time.time() - start,
+            scaled_center[0],
+            scaled_center[1],
+            angle,
+            scaled_target[0],
+            scaled_target[1],
+            orientation_target,
+        ])
+        with websocket_lock:
+            websocket_data = json.dumps({
+                "timestamp":
                 time.time() - start,
-                scaled_center[0],
-                scaled_center[1],
-                angle,
-                scaled_target[0],
-                scaled_target[1],
-                orientation_target,
-            ]
-        )
+                "block_x":
+                float(scaled_center[0]),
+                "block_y":
+                float(scaled_center[1]),
+                "block_orientation":
+                float(angle),
+                "target_x":
+                float(scaled_target[0]),
+                "target_y":
+                float(scaled_target[1]),
+                "target_orientation":
+                float(orientation_target),
+            })
         if cv2.waitKey(1) & 0xFF == ord("q"):
             break
 
