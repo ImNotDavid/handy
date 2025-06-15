@@ -1,4 +1,6 @@
-# HAND-mounted device for the teleoperation of non-anthropomorphic robotic manipulators-Y (Handy)
+# Haptic-enabled Affordable Non-anthropomorphic Device-Y (HANDY)
+
+
 ![Handy cover image](/assets/Cover.png)
 ## Hardware 
 
