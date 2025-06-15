@@ -1,7 +1,9 @@
-# Haptic-enabled Affordable Non-anthropomorphic Device-Y (HANDY)
-
+# HANDY
 
 ![Handy cover image](/assets/Cover.png)
+## Overview
+The Haptically-enabled and Afforable framework to control of Non-anthropomorphic robot manipulators for Data gatheringY (HANDY) is a very affordable data glove and ROS software stack to allow anyone to capture dexterous manipulation data.  
+
 ## Hardware 
 
 The 3d model can be found at [this](https://cad.onshape.com/documents/4283529db481f6427532362c/w/a5ad88a1f793d7bc8f76de6a/e/f981b522771d813f689838bc) public onshape project. 
