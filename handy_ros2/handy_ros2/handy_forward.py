@@ -6,7 +6,6 @@ from geometry_msgs.msg import Vector3, TransformStamped
 from handy_ros2.utils import quaternion_from_euler
 from std_msgs.msg import Int16MultiArray
 
-
 def calculateRotation(vector0: np.array, vector1: np.array):
     n = np.cross(vector0, vector1)
     if np.allclose(n, 0):
@@ -38,7 +37,6 @@ def calculateRotation(vector0: np.array, vector1: np.array):
     k_skew_squared = k_skew @ k_skew
     r = np.identity(3) + k_skew + k_skew_squared * ((1 - c) / (s ** 2))
     phi = np.deg2rad(-5)
-
     A = np.array([
         [1, 0,  0],
         [0, np.cos(phi),  -np.sin(phi)],
@@ -110,6 +108,7 @@ class FrameListener(Node):
             base_to_index_base = self.tf_buffer.lookup_transform(
                 'base',  # target_frame
                 'encoder_link_assembly__configuration_default',  # source_frame
+                rclpy.time.Time())
             
             base_to_thumb = self.tf_buffer.lookup_transform(
                 'base',
@@ -137,7 +136,6 @@ class FrameListener(Node):
             pass
 
     
-
 def main():
     rclpy.init()
     node = FrameListener()
