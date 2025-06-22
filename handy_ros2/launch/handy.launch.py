@@ -70,6 +70,13 @@ def generate_launch_description():
         name='handy_forward',
         output='screen'
     )
+  
+  websocket_bridge_cmd = Node(
+        package='handy_ros2',  # Replace with your package name
+        executable='websocket_bridge',    # Make sure this matches the executable
+        name='websocket_bridge',
+        output='screen'
+    )
    
   # Create the launch description and populate
   ld = LaunchDescription()
@@ -81,6 +88,7 @@ def generate_launch_description():
   ld.add_action(declare_urdf_model_path_cmd)
   ld.add_action(declare_use_robot_state_pub_cmd) 
   ld.add_action(handy_forward_cmd)  
+  ld.add_action(websocket_bridge_cmd)
 
   # Add any actions
   ld.add_action(start_robot_state_publisher_cmd)

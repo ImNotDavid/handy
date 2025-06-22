@@ -36,7 +36,7 @@ def calculateRotation(vector0: np.array, vector1: np.array):
 
     k_skew_squared = k_skew @ k_skew
     r = np.identity(3) + k_skew + k_skew_squared * ((1 - c) / (s ** 2))
-    phi = np.deg2rad(-5)
+    phi = np.deg2rad(0)
     A = np.array([
         [1, 0,  0],
         [0, np.cos(phi),  -np.sin(phi)],

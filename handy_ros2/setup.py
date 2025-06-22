@@ -26,7 +26,8 @@ setup(
     entry_points={
         'console_scripts': [
             'bridge = handy_ros2.handy_bridge:main',
-            'forward = handy_ros2.handy_forward:main'
+            'forward = handy_ros2.handy_forward:main',
+            'websocket_bridge = handy_ros2.websocket_bridge:main'
         ],
     },
 )
